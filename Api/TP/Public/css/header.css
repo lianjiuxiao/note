@@ -1,0 +1,83 @@
+/* * 
+*  SICHONGZOU首页头部(header) 样式
+*  sichongzou开发团队 weiwei 2014.1.2
+*
+*/
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, button {
+    font-size:100%;
+    margin:0;
+    padding:0;
+}
+
+.top{
+	width:100%;
+	height:35px;
+	line-height:35px;
+	background:#F5F5F5;
+}
+.top .table_left{
+	float:left;
+	margin-left:100px;
+	text-align:center;
+}
+.top .table_right{
+	float:right;
+	margin-right:100px;
+	text-align:center;
+}
+
+.header{
+	width:1200px;
+	height:130px;
+	overflow:hidden;
+	margin:0px auto;
+	border:#ccc 1px solid;
+}
+.header .logo{
+	float:left;
+	width:250px;
+	height:130px;
+	background:pink;
+}
+.header .sousuo{
+	float:left;
+	width:750px;
+	height:130px;
+	border:#ccc 1px solid;
+}
+.header .sousuo .find{
+	float:left;
+	margin-top:20px;
+	width:700px;
+	height:45px;
+	background:#FF4400;	
+}
+.header .sousuo .find_input{
+	float:left;
+	font-size:18px;
+	margin-left:3px;
+	margin-top:3px;
+	width:600px;
+	height:35px;
+}
+.header .sousuo .find span{
+	float:left;
+	margin-top:8px;
+	margin-left:5px;
+	width:80px;
+	font-size:24px;
+	color:white;
+	text-align:center;
+}
+.header .sousuo p,.header .sousuo strong{
+	float:left;
+	margin-top:3px;
+}
+.menu{
+	float:left;
+	width:100%;
+	height:40px;
+	margin:0px auto;
+	background:#94C72A;
+}

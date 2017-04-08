@@ -1,0 +1,164 @@
+<!-- SITE HEADER 站点页眉 -->
+<header>
+<div id="site-header" class="push-up" role="banner">
+	<!-- HEADER TOP 页眉顶部 -->
+	<div class="header-top">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<!-- CONTACT INFO 联系信息 -->
+					<div class="contact-info">
+						<i class="iconfont-headphones round-icon"></i>
+						<strong><{$head.cellphone}></strong>
+						<span>(营业时间：09:00 - 22:00)</span>
+					</div>
+					<!-- // CONTACT INFO 联系信息 -->
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<ul class="actions unstyled clearfix">
+						<li>
+							<!-- SEARCH BOX 搜索框 -->
+							<div class="search-box">
+								<form action="__APP__/Products/products/search" method="post">
+									<div class="input-iconed prepend">
+										<button class="input-icon"><i class="iconfont-search"></i></button>
+										<label for="input-search" class="placeholder">请输入搜索内容…</label>
+										<input type="text" name="search" id="input-search" class="round-input full-width" required />
+									</div>
+								</form>
+							</div>
+							<!-- // SEARCH BOX 搜索框 -->
+						</li>
+						<li data-toggle="sub-header" data-target="#sub-cart">
+							<!-- SHOPPING CART 购物车-->
+							<a href="javascript:void(0);" id="total-cart">
+								<i class="iconfont-shopping-cart round-icon"></i>
+							</a>
+							
+							<div id="sub-cart" class="sub-header">
+								<div class="cart-header">
+									<span>您的购物车当前为空.</span>
+									<small><a href="__APP__/Cart/cart">(查看全部)</a></small>
+								</div>
+								<ul class="cart-items product-medialist unstyled clearfix"></ul>
+								<div class="cart-footer">
+									<div class="cart-total clearfix">
+										<span class="pull-left uppercase">总计</span>
+										<span class="pull-right total">￥ 0</span>
+									</div>
+									<div class="text-right">
+										<a href="__APP__/Cart/cart" class="btn btn-default btn-round view-cart">查看购物车</a>
+									</div>
+								</div>
+							</div>
+							<!-- // SHOPPING CART 购物车 -->
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!-- ADD TO CART MESSAGE 添加到购物车 -->
+		<div class="cart-notification">
+			<ul class="unstyled"></ul>
+		</div>
+		<!-- // ADD TO CART MESSAGE 添加到购物车 -->
+	</div>
+	<!-- // HEADER TOP 头部顶部 -->
+	<!-- MAIN HEADER 头部主要部分 -->
+	<div class="main-header-wrapper">
+		<div class="container">
+			<div class="main-header">
+				<!-- CURRENCY 用户菜单 -->
+				<div class="actions">
+					<!-- USER RELATED MENU 用户相关菜单 -->
+					<nav id="tiny-menu" class="clearfix">
+						<ul class="user-menu" >
+							<empty name="Think.session.Username">
+								<!-- 登陆成功后此处隐藏并显示用户名，点击可进入用户中心 -->
+								<li><a blank-"_blank" href="__APP__/Login/login" style="font-size:13px;">登录</a></li>
+							<else/>
+								<li><a blank-"_blank" href="__APP__/Personal/center"><{$Think.session.Username}></a></li>
+							</empty>
+							<!-- 登陆成功后此处隐藏 -->
+							<li><a href="__APP__/Register/register" style="font-size:13px;">注册会员</a></li>
+
+							<!-- 清除cookie -->
+							<notempty name="Think.session.Username">
+							<li><a href="__APP__/Login/loginout" style="font-size:13px;">退出</a></li>
+							</notempty>
+						</ul>
+					</nav>
+					<!-- // USER RELATED MENU 用户相关菜单 -->
+				</div>
+				<!-- // CURRENCY  用户菜单 -->
+				<!-- SITE LOGO 站点 logo -->
+				<div class="logo-wrapper">
+					<a href="__APP__" class="logo" title="<{$head.shoptitle}>">
+						<img src="__PUBLIC__/Uploads/config/<{$head.logo}>" alt="<{$head.shoptitle}>" />
+					</a>
+				</div>
+				<!-- // SITE LOGO 站点 logo -->
+				<!-- SITE NAVIGATION MENU 网站导航菜单 -->
+				<nav id="site-menu" role="navigation">
+					<ul class="main-menu hidden-sm hidden-xs">
+						<li class="active">
+							<a href="__APP__">首页</a>
+						</li>
+						<li>
+							<a href="__APP__/Products/products">产品列表</a>
+						</li>
+						<empty name="Think.session.Username">
+						<else/>
+							<li class="dropdown">
+								<!-- <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"> -->
+								<a href="__APP__/Personal/center">个人中心</a>
+								<!-- <b class="caret"></b> 是否显示下拉条 -->
+							</li>
+
+						</empty>
+						<li>
+							<a href="__APP__/Cart/cart">购物车</a>
+						</li>
+						<li>
+							<a href="__APP__/Checkout/checkout">结账</a>
+						</li>
+					</ul>
+					
+					<!-- MOBILE MENU 手机菜单 -->
+						<div id="mobile-menu" class="dl-menuwrapper visible-xs visible-sm" style="z-index:10">
+							<button class="dl-trigger"><i class="iconfont-reorder round-icon"></i></button>
+							<ul class="dl-menu">
+								<li class="active">
+									<a href="__APP__">首页</a>
+								</li>
+						<li>
+							<a href="__APP__/Products/products">产品列表</a>
+						</li>
+						<empty name="Think.session.Username">
+						<else/>
+							<li class="dropdown">
+								<!-- <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)"> -->
+								<a href="__APP__/Personal/center">个人中心</a>
+								<!-- <b class="caret"></b> 是否显示下拉条 -->
+							</li>
+
+						</empty>
+						<li>
+							<a href="__APP__/Cart/cart">购物车</a>
+						</li>
+						<li>
+							<a href="__APP__/Checkout/checkout">结账</a>
+						</li>
+							</ul>
+						</div>
+					<!-- // MOBILE MENU 手机菜单 -->
+
+				</nav>
+				<!-- // SITE NAVIGATION MENU 网站导航菜单 -->
+			</div>
+		</div>
+	</div>
+	<!-- // MAIN HEADER 页眉主要部分 -->
+</header>
+<!-- // SITE HEADER 网站页眉-->

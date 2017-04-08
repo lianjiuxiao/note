@@ -1,0 +1,121 @@
+<!-- 包含顶部 -->
+<include file="./Admin/Tpl/Index/header.html" />
+
+<!-- 包含侧边栏 -->
+<include file="./Admin/Tpl/Index/sider.html" />
+
+<div id="content">
+	<!-- 顶部右侧快捷操作按钮 开始 -->
+		<div id="content-header">
+			<h1>订单管理</h1>
+			<div class="btn-group">
+				<a class="btn btn-large tip-bottom" title="订单管理"><i class="icon-file"></i></a>
+				<a class="btn btn-large tip-bottom" title="用户管理"><i class="icon-user"></i></a>
+				<a class="btn btn-large tip-bottom" title="评论管理"><i class="icon-comment"></i><span class="label label-important">5</span></a>
+				<a class="btn btn-large tip-bottom" title="购物车管理"><i class="icon-shopping-cart"></i></a>
+			</div>
+		</div>
+        <!-- 顶部右侧快捷操作按钮 结束 -->
+        <!-- 顶部面包屑导航 开始 -->
+		<div id="breadcrumb">
+			<a href="__APP__" title="返回首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+			<a href="__URL__/lists" title="返回用户管理" class="tip-bottom"> 订单管理</a>
+			<a href="#" class="current"> 收货人基本信息编辑</a>
+		</div>
+		<!-- 顶部面包屑导航 结束 -->
+		<!-- 主体区域 -->
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span12">
+					<!-- 组件盒子 开始 -->
+					    <div class="widget-box">
+						        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+						          <h5>收货人信息</h5>
+						        </div>
+						        <div class="widget-content nopadding">
+						          <form action="__URL__/updates/id/<{$data.id}>" method="post" class="form-horizontal">
+					
+						            <div class="control-group">
+						              <label class="control-label">收货人 :</label>
+						              <div class="controls">
+						                <input type="text" class="span11" name="uid" value="<{$data.receiver}>" disabled/>
+						              </div>
+						            </div>
+
+						           	<div class="control-group">
+									<label class="control-label">收货地址:</label>
+									<div class="controls">
+										<select id="sheng" name="province" style="width:100px;"></select>&nbsp;&nbsp;
+										<select id="shi" name="city" style="width:200px;"></select>&nbsp;&nbsp;
+										<select id="qu" name="area" style="width:200px;"></select>
+										<script type="text/javascript" src="__PUBLIC__/js/area.js"></script>
+										<script type="text/javascript">_init_area();</script>
+									</div>
+								</div>
+
+								<div class="control-group">
+						              <label class="control-label">街道:</label>
+						              <div class="controls">
+						                <input type="text" class="span11" name="street" value="<{$data.street}>"/>
+						              </div>
+						            </div>
+
+								<div class="control-group">
+						              <label class="control-label">电话号:</label>
+						              <div class="controls">
+						                <input type="text" class="span11" name="tel" value="<{$data.tel}>"/>
+						              </div>
+						            </div>
+
+						            <div class="control-group">
+						              <label class="control-label">手机号:</label>
+						              <div class="controls">
+						                <input type="text" class="span11" name="mobile" value="<{$data.mobile}>"/>
+						              </div>
+						            </div>
+
+						            <div class="control-group">
+						              <label class="control-label">邮箱:</label>
+						              <div class="controls">
+						                <input type="text" class="span11" name="email" value="<{$data.email}>"/>
+						              </div>
+						            </div>
+
+						            <div class="control-group">
+						              <label class="control-label">邮编:</label>
+						              <div class="controls">
+						                <input type="text" class="span11" name="postcode" value="<{$data.postcode}>"/>
+						              </div>
+						            </div>
+
+						            <div class="control-group">
+						              <label class="control-label">是否默认地址:</label>
+						              <div class="controls">
+						            	<select name="isdefault" style="width:120px;">
+						            			<option value="1" <if condition="$data.default eq 1">selected</if>>是</option>
+						            			<option value="2" <if condition="$data.default eq 2">selected</if>>否</option>
+						            	</select>
+						              </div>
+						            </div>
+
+						            <!-- <div class="control-group">
+						              <label class="control-label">最佳送货时间:</label>
+						              <div class="controls">
+						                <input type="text" class="span11" name="besttime" value="<{$data.besttime|date='H时i分',###}>"/>
+						              </div>
+						            </div> -->
+
+						            <div class="form-actions">
+						              <button type="submit" class="btn btn-success">保存</button>
+						            </div>
+						          </form>
+						        </div>
+						      </div>
+					<!-- 组件盒子 开始 -->
+				</div>
+		     </div>	
+	     </div>
+</div>
+
+<!-- 包含底部 -->
+<include file="./Admin/Tpl/Index/footer.html" />

@@ -1,0 +1,59 @@
+<!-- 包含顶部 --> 
+<include file="./Admin/Tpl/Index/header.html" />
+
+
+<div id="content">
+	<!-- 顶部右侧快捷操作按钮 开始 -->
+		<div id="content-header">
+			<h1>模版切换</h1>
+			<div class="btn-group">
+				<a class="btn btn-large tip-bottom" title="订单管理"><i class="icon-file"></i></a>
+				<a class="btn btn-large tip-bottom" title="用户管理"><i class="icon-user"></i></a>
+				<a class="btn btn-large tip-bottom" title="评论管理"><i class="icon-comment"></i><span class="label label-important">5</span></a>
+				<a class="btn btn-large tip-bottom" title="购物车管理"><i class="icon-shopping-cart"></i></a>
+			</div>
+		</div>
+        <!-- 顶部右侧快捷操作按钮 结束 -->
+        <!-- 顶部面包屑导航 开始 -->
+		<div id="breadcrumb">
+			<a href="__APP__" title="返回首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+			<a href="__URL__/lists" title="返回模版管理" class="tip-bottom"> 模版管理</a>
+			<a href="#" class="current"> 模版设置</a>
+		</div>
+		<!-- 顶部面包屑导航 结束 -->
+		<!-- 主体区域 -->
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span12">
+					<!-- 组件盒子 开始 -->
+					<div class="widget-box">
+						<!-- 组件标题区域 -->
+						<div class="widget-title"><h5>模版列表</h5></div>
+						<!-- 组件内容区域 -->
+							<div class="widget-content">
+								<div class="row">
+									<form action="__URL__/setModel" method="post">
+										<div style="float:left;margin-left:60px;text-align:center;">
+											<img src="__PUBLIC__/Uploads/model/模版1.png" alt="模版1" style="width:300px;height:200px;padding-top:20px;padding-bottom:20px;"><br/>
+											<input type="hidden" name="model" value="Index">
+											<input type="submit" class="btn btn-primary btn-sm" value="启用此模版">
+										</div>
+									</form>
+									<form action="__URL__/setModel" method="post">
+										<div style="float:left;margin-left:60px;text-align:center;">
+											<img src="__PUBLIC__/Uploads/model/模版2.png" alt="模版1" style="width:300px;height:200px;padding-top:20px;padding-bottom:20px;"><br/>
+											<input type="hidden" name="model" value="Bill">
+											<input type="submit" class="btn btn-primary btn-sm" value="启用此模版">
+										</div>
+									</form>
+								</div>
+
+							</div>
+						</form>
+					</div>
+					<!-- 组件盒子 结束 -->
+				</div>
+			</div>
+			
+<!-- 包含底部 -->
+<include file="./Admin/Tpl/Index/footer.html" />

@@ -1,0 +1,4 @@
+安装步骤如下：
+1、用数据库管理软件将sql.sql数据导入数据库中
+2、修改config.inc.php和Index\Conf下的config.php中的数据库配置参数修改为对应数据库配置。
+3、后台登录地址：http://xxx.com/admin.php，用户名：admin，密码:admin888

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<head>
+	<title>购物车</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<!-- Bootstrap不支持IE的兼容模式，此处使IE浏览器运行最新的渲染模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 响应式布局开启视窗控制 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 页面信息 -->
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="author" content="四重奏项目组/SC">
+	
+	<!-- bootstarp css 文件引入 -->
+	<link rel="stylesheet" href="__PUBLIC__/index/css/bootstrap.css">
+	<link rel="stylesheet" href="__PUBLIC__/index/css/bootstrap-theme.css">
+	<!-- // bootstrap css 文件引入 -->
+
+	<!-- 一般 css 文件引入 -->
+	<link rel="stylesheet" href="__PUBLIC__/index/css/minified.css">
+	<!-- // 一般 css 文件引入 -->
+
+	<!--[if IE 8]>
+		<script src="__PUBLIC__/index/js/respond.min.js"></script>
+		<script src="__PUBLIC__/index/js/selectivizr-min.js"></script>
+	<![endif]-->
+	
+	<!-- 挂载 jquery.min.js (上线采用)到对象 window 下，若不成功直接加载 -->
+	<script>window.jQuery || document.write('<script src="__PUBLIC__/index/js/jquery.min.js"><\/script>');</script>
+	
+	<!-- // 挂载 jquery.min.js (上线采用)到对象 window 下，若不成功直接加载 -->
+	<script src="__PUBLIC__/index/js/modernizr.min.js"></script>
+	
+	<!-- 挂载bootstrap js 文件 -->
+	<script src="__PUBLIC__/index/js/bootstrap.js"></script>
+	<!-- // 挂载 bootstarp js 文件 -->
+	
+	<!-- 挂载 stickUp 顶部悬浮 js 插件 -->
+	<script src="__PUBLIC__/index/js/stickUp.min.js"></script>
+	<!-- // 挂载 stickUp 顶部悬浮 js 插件 -->
+	
+	<!-- 特定页面 css -->
+	<link rel="stylesheet" href="__PUBLIC__/index/css/innerpage.css">
+	<link rel="stylesheet" href="__PUBLIC__/index/css/owl.carousel.css">
+	<link rel="stylesheet" href="__PUBLIC__/index/css/owl.theme.css">
+	<!-- // 特定页面 css -->
+
+	<!-- 响应式 css 文件 -->
+	<link rel="stylesheet" href="__PUBLIC__/index/css/responsive.css">
+	<!-- // 响应式 css 文件 -->
+</head>
+<body>
+			
+	<!-- PAGE WRAPPER -->
+<div id="page-wrapper">
+
+	<!-- 站点头部 -->
+	<include file="./Index/Tpl/Index/header.html" />
+		<!-- BREADCRUMB 面包屑导航 -->
+		<div class="breadcrumb-container">
+			<div class="container">
+				<div class="relative">
+					<ul class="bc unstyled clearfix">
+						<li><a href="#">首页</a></li>
+						<li><a href="products.html" class="active">购物车</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- // BREADCRUMB 面包屑导航 -->
+		
+		<!-- SITE MAIN CONTENT 站点主要内容-->
+		<main id="main-content" role="main">
+				
+			<section class="section">
+				<div class="container">
+					<!-- 商品信息列表 -->
+					<table class="tbl-cart">
+						<thead>
+							<tr>
+								<th>商品名</th>
+								<th style="width: 15%;">单价</th>
+								<th style="width: 15%;">数量</th>
+								<th class="hidden-xs" style="width: 15%;">合计</th>
+								<th class="hidden-xs" style="width: 10%;"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="hide empty-cart">
+								<td colspan="5" >
+									您的购物车为空, 您可以去<a href="__APP__/Products/products">商品列表</a>找您喜欢的商品.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<!-- 使用优惠券 -->
+<!-- 					<div class="pull-left coupon m-b">
+						<div class="input-group">
+							<label for="apply-coupon" class="placeholder">Enter Your Coupon Code</label>
+							<input type="text" id="apply-coupon" name="coupon" class="form-control" required />
+							<span class="input-group-btn">
+								<button class="btn btn-primary">使用优惠券</button>
+							</span>
+						</div>
+					</div> -->
+					
+					<div class="shopcart-total pull-right clearfix">
+<!-- 						<div class="cart-subtotal text-xs m-b-sm clearfix">
+							<span class="pull-left">小计:</span>
+							<span class="pull-right">￥1050.00</span>
+						</div> -->
+						<div class="cart-total text-bold m-b-lg clearfix">
+							<span class="pull-left">共计:</span>
+							<span class="pull-right">￥1050.00</span>
+						</div>
+						<div class="text-center">
+							<a class="btn btn-primary btn-round uppercase" href="__APP__/Checkout/checkout">继续购物</a>
+							<a class="btn btn-round btn-default uppercase" href="__APP__/Checkout/checkout">进入结算中心</a>
+
+						</div>
+					</div>
+					
+				</div>
+			</section>
+			
+
+			<!-- RELATED PRODUCTS 相关商品-->
+			<section class="section visible-items-4">
+				<div class="container">
+					<div class="row">
+						<header class="section-header clearfix col-sm-offset-3 col-sm-6">
+							<h3 class="section-title">您可能感兴趣的</h3>
+							<p class="section-teaser">韩都衣舍，随您挑选您感兴趣的商品</p>
+						</header>
+						
+						<div class="clearfix"></div>
+											<!-- BEGIN CAROUSEL 开始旋转木马 -->
+					<div id="featured-products" class="add-cart" data-product=".product" data-thumbnail=".entry-media .thumb" data-title=".entry-title > a" data-url=".entry-title > a" data-price=".entry-price > .price">
+					
+						<div class="owl-controls clickable center">
+							<div class="owl-buttons">
+								<div class="owl-prev"><i class="iconfont-angle-left"></i></div>
+								<div class="owl-next"><i class="iconfont-angle-right"></i></div>
+							</div>
+						</div>
+						
+						<div class="owl-carousel owl-theme" data-visible-items="4" data-navigation="true" data-lazyload="true">
+							<!-- 掌柜推荐商品遍历部分开始-->
+							<foreach name="tdata" item="vo">
+								<div class="product" data-product-id="<{$vo.id}>">
+									<div class="entry-media">
+										<img data-src="__PUBLIC__/Uploads/goods/<{$vo.pic}>" alt="" class="lazyOwl thumb"/>
+										<div class="hover">
+											<a href="__APP__/Products/product/id/<{$vo.id}>" class="entry-url"></a>
+											<ul class="icons unstyled">
+												<li>
+													<div class="circle ribbon ribbon-sale">热销</div>
+												</li>
+												<li>
+													<a href="__PUBLIC__/Uploads/goods/<{$vo.pic}>" class="circle" data-toggle="lightbox"><i class="iconfont-search"></i></a>
+												</li>
+												<li>
+													<a href="__PUBLIC__/index/#" class="circle add-to-cart"><i class="iconfont-shopping-cart"></i></a>
+												</li>
+											</ul>
+								        </div>
+									</div>
+									<div class="entry-main">
+										<h5 class="entry-title">
+											<a href="__PUBLIC__/Products/product/id/<{$vo.id}>"><{$vo.gname}></a>
+										</h5>
+										<div class="entry-price">
+											<strong class="accent-color price">￥<{$vo.price}></strong>
+										</div>
+									</div>
+								</div>
+							</foreach>
+							<!-- 掌柜推荐商品遍历部分结束-->
+						</div>
+							
+					</div>
+					<!-- // END CAROUSEL 结束旋转木马 -->
+					
+					</div>
+				</div>
+			</section>
+			<!-- // RELATED PRODUCTS -->
+			
+		</main>
+		<!-- // SITE MAIN CONTENT -->
+		<!-- 站点页脚 -->
+		<include file="./Index/Tpl/Index/footer.html" />
+		
+</div>
+<!-- // PAGE WRAPPER -->
+
+<!-- Essential Javascripts 基本的 js 文件 -->
+<script src="__PUBLIC__/index/js/minified.js"></script>
+<!-- // Essential Javascripts 基本的 js 文件 -->
+
+<!-- Particular Page Javascripts 特定页面 js 文件 -->
+<script src="__PUBLIC__/index/js/products.js"></script>
+<script src="__PUBLIC__/index/js/owl.carousel.js"></script>
+<!-- // Particular Page Javascripts 特定页面 js 文件 -->
+	
+</body>
+</html>

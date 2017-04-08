@@ -1,0 +1,643 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<title>MSS模版商铺系统 演示二</title>
+
+<!-- Main style -->
+<link rel="stylesheet" href="__PUBLIC__/bill/css/main.css" type="text/css" />
+
+<!-- Fancybox style -->
+<link rel="stylesheet" href="__PUBLIC__/bill/fancybox/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+
+<!-- Product slider style -->
+<link rel="stylesheet" href="__PUBLIC__/bill/css/product-slider.css" type="text/css" />
+
+<!-- Style for the superfish navigation menu -->
+<link rel="stylesheet" href="__PUBLIC__/bill/superfish/superfish.css" type="text/css" media="screen" />
+
+<!-- Promo slider style -->
+<link rel="stylesheet" href="__PUBLIC__/bill/css/megamenu.css" type="text/css" /> 
+
+<!-- Style for Megamenu -->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/bill/css/scrollable-navig.css">
+
+<!-- Google font -->
+<!-- <link href='css/css1.css' rel='stylesheet' type='text/css' />
+<link href='css/css2.css' rel='stylesheet' type='text/css' />
+<link href='css/css3.css' rel='stylesheet' type='text/css' /> -->
+
+<!-- JS for jQuery -->
+<script type="text/javascript" src="__PUBLIC__/bill/js/jquery-1.7.1.min.js"></script>
+
+<!-- JS for jQuery Product slider -->
+<script type="text/javascript" src="__PUBLIC__/bill/js/jquery.tools.min.js"></script>
+
+<!-- JS for jQuery Border effect -->
+<script type="text/javascript" src="__PUBLIC__/bill/js/jquery.insetBorderEffect.js"></script>
+
+<!-- JS for jQuery Fancy Box -->
+<script type="text/javascript" src="__PUBLIC__/bill/fancybox/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
+<!-- JS for superfish navigation menu -->
+<script type="text/javascript" src="__PUBLIC__/bill/superfish/hoverIntent.js"></script> 
+<script type="text/javascript" src="__PUBLIC__/bill/superfish/superfish.js"></script> 
+
+</head>
+<body>
+	
+<div id="container">
+	
+	<!-- 顶部优惠信息 -->
+	<div id="header-top">
+		<p>
+			订单满 ￥100 包邮 ！ 在结算时输入优惠码 <span class="promocode">FREEDEV</span> ，有效期至2014年10月1日
+		</p>
+	</div>
+	
+	<div class="header-main">
+		<!-- logo 图片 -->
+		<div class="logo">
+			<a href="__PUBLIC__/bill/index.html" name="top"><img src="__PUBLIC__/bill/images/logo.png" alt="logo" border="0"/></a>
+		</div>
+		<!-- 注册、购物车 链接 -->
+		<div class="login-block">
+			<span class="account"><a href="#" class="account">注册</a></span> 
+			<span class="cart"><a href="cart.html" class="cart">我的购物车 (0)</a></span>
+		</div>
+	</div>
+	
+	<div id="navigation">
+		<!-- 搜索框 -->
+		<div class="search-container">
+			<div class="search-inner">	
+				<input type="text" value="我想找..." onfocus="if(this.value=='我想找...'){this.value=''};" onblur="if(this.value==''){this.value='我想找...'};" class="search-field"/>
+				<input type="submit" id="s_submit" value="" class="search-btn"/>
+			</div>
+		</div>
+		<div class="navigation-inner">
+			<div class="flare"></div>
+			<div class="home-icon">
+				<a href="__PUBLIC__/bill/index.html"><img src="__PUBLIC__/bill/images/home_icon.png" border="0"/></a>
+			</div>
+			<!-- 顶部导航条 start -->
+			<ul class="sf-menu">
+				<li class="nav-item"><a href="#">产品列表</a></li>
+				<li class="nav-item"><a href="#">购物车</a></li>
+				<li class="nav-item"><a href="#">结账</a></li>
+				<li class="nav-item"><a href="#">常见问题 FAQ</a></li>
+				<li class="nav-item"><a href="#">联系我们</a></li>
+			</ul>
+			<!-- 顶部导航条 end -->
+			
+			<!-- Megamenu Begin -->
+
+			<!-- Megamenu End -->
+			
+		</div>
+	</div>
+	<div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >Website Template</a></div>
+	<div id="content">
+		<div class="sales-label">
+		</div>
+		
+		<!-- Promo Begin -->
+		<div class="promo-inner" id="promo">
+		
+			<!-- main navigator -->
+			
+			<ul id="main_navi">
+			
+				<li class="first">
+					<img src="__PUBLIC__/bill/images/slide_small1.jpg">
+					<span class="title">什么是我的色彩</span>
+					Lorem ipsum dolor sit amet
+				</li>
+				<li class="">
+					<img src="__PUBLIC__/bill/images/slide_small2.jpg">
+					<span class="title">愉快的购物体验</span>
+					Nulla sit amet nunc non nibh faucibus
+				</li>
+				<li class="active">
+					<img src="__PUBLIC__/bill/images/slide_small3.jpg">
+					<span class="title">紫色梦幻</span>
+					Phasellus elefend, enim non euismod lacinia
+				</li>
+				<li class="last">
+					<img src="__PUBLIC__/bill/images/slide_small4.jpg">
+					<span class="title">红色激情</span>
+					Class aptent taciti sociosqu it litora
+				</li>
+			</ul>
+			
+			<!-- root element for the main scrollable -->
+			<div id="main">
+			
+				<!-- root element for pages -->
+				<div style="top: -940px;" id="pages">
+			
+					<!-- page #1 -->
+					<div class="page">
+			
+						<!-- sub navigator #1 -->
+						<div class="navi"><a class="nivo-control active"></a><a></a><a></a></div>
+			
+						<!-- inner scrollable #1 -->
+						<div class="scrollable">
+			
+							<!-- root element for scrollable items -->
+							<div class="items">
+			
+								<!-- items  -->
+								<div class="item">
+									<img src="__PUBLIC__/bill/images/promo1.jpg">
+								</div>
+								<div class="item">
+									<img src="__PUBLIC__/bill/images/promo4.jpg">
+								</div>
+								<div class="item">
+									<img src="__PUBLIC__/bill/images/promo5.jpg">
+								</div>
+			
+								</div>
+			
+						</div>
+			
+					</div>
+			
+					<!-- page #2 -->
+					<div class="page">
+			
+						<div class="navi"><a class="active"></a><a></a><a></a></div>
+			
+						<!-- inner scrollable #2 -->
+						<div class="scrollable">
+			
+							<!-- root element for scrollable items -->
+							<div class="items">
+			
+								<!-- items on the second page -->
+							<div class="item">
+									<img src="__PUBLIC__/bill/images/promo2.jpg">
+								</div>
+								<div class="item">
+									<img src="__PUBLIC__/bill/images/promo4.jpg">
+								</div>
+								<div class="item">
+									<img src="__PUBLIC__/bill/images/promo5.jpg">
+								</div>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+					
+					<!-- page #3 -->
+					<div class="page">
+			
+						<div class="navi"><a class="active"></a><a></a><a></a></div>
+			
+						<!-- inner scrollable #2 -->
+						<div class="scrollable">
+			
+							<!-- root element for scrollable items -->
+							<div class="items">
+			
+								<!-- items on the second page -->
+								<div class="item">
+									<img src="__PUBLIC__/bill/images/promo4.jpg">
+								</div>
+								<div class="item">
+									<img src="__PUBLIC__/bill/images/promo2.jpg">
+								</div>
+								<div class="item">
+									<img src="__PUBLIC__/bill/images/promo5.jpg">
+								</div>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+					<!-- page #4 -->
+					<div class="page">
+			
+						<div class="navi"><a class="active"></a><a></a><a></a></div>
+			
+						<!-- inner scrollable #3 -->
+						<div class="scrollable">
+			
+							<!-- root element for scrollable items -->
+							<div class="items">
+			
+								<!-- items on the first page -->
+							<div class="item">
+									<img src="__PUBLIC__/bill/images/promo3.jpg">
+								</div>
+								<div class="item">
+									<img src="__PUBLIC__/bill/images/promo4.jpg">
+								</div>
+								<div class="item">
+									<img src="__PUBLIC__/bill/images/promo5.jpg">
+								</div>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+					<!-- End page 4 -->
+					
+				</div>
+			
+			</div>
+
+		</div>
+		<!-- End Promo -->
+
+		<div class="shadow"></div>
+		<!-- Promo End -->
+		
+		<!-- Message Begin -->
+		
+		<div class="message">
+			欢迎来到 xxx 美妆小店，我们将竭诚为您服务！
+		</div>
+		
+		<!-- Message End -->
+		
+		<!-- Bestsellers Begin -->
+		<div class="content-top">
+		</div>
+		
+		<div class="content-inner home">
+			
+			<div id="slider-container">
+				
+			<div class="slider-nav">
+				<a class="prev2"></a>
+				<a class="next2"></a>
+			</div>
+
+				<div class="slider">   
+					
+				   <!-- Listing of the elements of the slider -->
+				   <div class="items">
+				   
+					  <!-- 1-4 -->
+					  <div class="group-items">
+						 <div class="single-item">
+							<span class="title"><a href="#">给她最伟大的新品香水</a></span>
+							<span class="price">￥149.90</span>
+							<img src="__PUBLIC__/bill/images/product1.png" alt="Item"/>
+							<a href="#" class="general-button float-left"><span class="button">加入购物车</span></a>
+							<span class="list-link">
+								<a href="#" class="regular">详细...</a>
+							</span>
+							<br class="clear"/>
+						</div>
+						
+						<div class="single-item">
+							<span class="title"><a href="#">香气迷人</a></span>
+							<span class="price">￥29</span>
+							<img src="__PUBLIC__/bill/images/product2.png" alt="Item"/>
+							<a href="#" class="general-button float-left"><span class="button">加入购物车</span></a>
+							<span class="list-link">
+								<a href="#" class="regular">详细...</a>
+							</span>
+							<br class="clear"/>
+						</div>
+						
+						<div class="single-item">
+							<span class="title"><a href="#">橙色和黄色</a></span>
+							<span class="price">￥23</span>
+							<img src="__PUBLIC__/bill/images/product3.png" alt="Item"/>
+							<a href="#" class="general-button float-left"><span class="button">加入购物车</span></a>
+							<span class="list-link">
+								<a href="#" class="regular">详细...</a>
+							</span>
+							<br class="clear"/>
+						</div>
+						
+						<div class="single-item">
+							<span class="title"><a href="#">雨中的一吻</a></span>
+							<span class="price">￥129.90</span>
+							<img src="__PUBLIC__/bill/images/product5.png" alt="Item"/>
+							<a href="#" class="general-button float-left"><span class="button">加入购物车</span></a>
+							<span class="list-link">
+								<a href="#" class="regular">详细...</a>
+							</span>
+							<br class="clear"/>
+						</div>
+					  </div>
+					  
+					  <!-- 4-8 -->
+					  <div class="group-items">
+						 <div class="single-item">
+							<span class="title"><a href="#">甜蜜的香气</a></span>
+							<span class="price">￥149.90</span>
+							<img src="__PUBLIC__/bill/images/product4.png" alt="Item"/>
+							<a href="#" class="general-button float-left"><span class="button">加入购物车</span></a>
+							<span class="list-link">
+								<a href="#" class="regular">详细...</a>
+							</span>
+							<br class="clear"/>
+						</div>
+						
+						<div class="single-item">
+							<span class="title"><a href="#">春天的风</a></span>
+							<span class="price">￥29</span>
+							<img src="__PUBLIC__/bill/images/product2.png" alt="Item"/>
+							<a href="#" class="general-button float-left"><span class="button">加入购物车</span></a>
+							<span class="list-link">
+								<a href="#" class="regular">详细...</a>
+							</span>
+							<br class="clear"/>
+						</div>
+						
+						<div class="single-item">
+							<span class="title"><a href="#">迷人风姿</a></span>
+							<span class="price">￥23</span>
+							<img src="__PUBLIC__/bill/images/product6.png" alt="Item"/>
+							<a href="#" class="general-button float-left"><span class="button">加入购物车</span></a>
+							<span class="list-link">
+								<a href="#" class="regular">详细...</a>
+							</span>
+							<br class="clear"/>
+						</div>
+						
+						<div class="single-item">
+							<span class="title"><a href="#">橙色和黄色</a></span>
+							<span class="price">￥129.90</span>
+							<img src="__PUBLIC__/bill/images/product3.png" alt="Item"/>
+							<a href="#" class="general-button float-left"><span class="button">加入购物车</span></a>
+							<span class="list-link">
+								<a href="#" class="regular">详细...</a>
+							</span>
+							<br class="clear"/>
+						</div>
+					  </div>
+					  
+				   </div>
+				   
+				   <!-- End -->
+				   
+				</div>
+
+				<br class="clear"/>
+			</div>
+
+		</div>
+		<div class="shadow"></div>
+		<!-- Bestsellers End -->
+		
+		<div class="content-top blog-home"></div>
+		<div class="content-inner home">
+			
+			<!-- Gallery Begin -->
+			<div class="one-half float-left">
+				<h3>浏览我们的画廊</h3>
+				
+				<a href="__PUBLIC__/bill/images/big01.jpg" rel="group4" class="grouped-elements" title="美丽的 xxx 山">
+					<img border="0" alt="" src="__PUBLIC__/bill/images/01.jpg" class="portfolio-image">
+					<span class="imagehover"></span>
+				</a>
+				<a href="__PUBLIC__/bill/images/big02.jpg" rel="group4" class="grouped-elements" title="无与伦比的夜景">
+					<img border="0" alt="" src="__PUBLIC__/bill/images/02.jpg" class="portfolio-image">
+					<span class="imagehover"></span>
+				</a>
+				<a href="__PUBLIC__/bill/images/big03.jpg" rel="group4" class="grouped-elements" title="干裂的意义">
+					<img border="0" alt="" src="__PUBLIC__/bill/images/03.jpg" class="portfolio-image">
+					<span class="imagehover"></span>
+				</a>
+				<a href="__PUBLIC__/bill/images/big04.jpg" rel="group4" class="grouped-elements" title="海上迷雾">
+					<img border="0" alt="" src="__PUBLIC__/bill/images/04.jpg" class="portfolio-image">
+					<span class="imagehover"></span>
+				</a>
+				<a href="__PUBLIC__/bill/images/big05.jpg" rel="group4" class="grouped-elements" title="宁静河畔">
+					<img border="0" alt="" src="__PUBLIC__/bill/images/05.jpg" class="portfolio-image">
+					<span class="imagehover"></span>
+				</a>
+				<a href="__PUBLIC__/bill/images/big06.jpg" rel="group4" class="grouped-elements" title="娇嫩的花蕊">
+					<img border="0" alt="" src="__PUBLIC__/bill/images/06.jpg" class="portfolio-image">
+					<span class="imagehover"></span>
+				</a>
+				<a href="__PUBLIC__/bill/images/big03.jpg" rel="group4" class="grouped-elements" title="干裂的意义">
+					<img border="0" alt="" src="__PUBLIC__/bill/images/03.jpg" class="portfolio-image">
+					<span class="imagehover"></span>
+				</a>
+				<a href="__PUBLIC__/bill/images/big01.jpg" rel="group4" class="grouped-elements" title="美丽的 xxx 山">
+					<img border="0" alt="" src="__PUBLIC__/bill/images/01.jpg" class="portfolio-image">
+					<span class="imagehover"></span>
+				</a>
+				<a href="__PUBLIC__/bill/images/big04.jpg" rel="group4" class="grouped-elements" title="海上迷雾">
+					<img border="0" alt="" src="__PUBLIC__/bill/images/04.jpg" class="portfolio-image">
+					<span class="imagehover"></span>
+				</a>
+			</div>
+			<!-- Gallery End -->
+			
+			<!-- Recent Posts Begin -->
+			<div class="one-half float-right">
+				<h3>最新新闻或博客</h3>
+				
+				<div class="blog-post-home-title">
+					<div class="blog-home-date float-left">
+						<div class="date-number">23<br/>二月</div>
+					</div>
+					<div class="blog-post-home-title-inner">
+						<a href="#" class="title">美丽的 xxx 河畔</a>
+					</div>
+				</div>
+				
+				<p class="post-content">
+				在那个灯火迷离的傍晚，徜徉在 xxx 河畔，划着船儿，感受那从未有过的安逸；深吸一口气，体验最舒服的呼吸；谁也无法阻挡你享受这人间的最美风光。 <a href="#" class="regular">详细...</a>
+				</p>
+				
+				<div class="blog-post-home-title">
+					<div class="blog-home-date float-left">
+						<div class="date-number">20<br/>二月</div>
+					</div>
+					<div class="blog-post-home-title-inner">
+						<a href="#" class="title">奇葩全新女士淡香水</a>
+					</div>
+				</div>
+				
+				<p class="post-content-last">
+				花样仕女，她用令人心颤的美貌和醉人的魅惑气息，激起心底的涟漪。她在轻舞，薄纱浮动，仿若透明的质地更展现出她撩人的曲线。她到底是一个有血有肉的女子，还是一个渺渺如烟的倩影？抑或只是一个梦境或假象？就在这疏忽一瞬间，美人已消失在眼前， <a href="#" class="regular">详细...</a>
+				</p>
+			</div>
+			<br class="clear"/>
+		</div>
+		<!-- Recent Posts End -->
+		
+		<div class="shadow"></div>
+		
+		<!-- Bullet List Begin -->
+		<div class="bullet-list float-left">
+			<h4>提供高品质的产品</h4>
+			<p>xxx 的香水、彩妆与保养产品可在各大百货公司 xxx 专柜购买。如欲寻找离您最近的 xxx 专柜，请点击网页下方<a href="#">寻找香水与化妆品专柜。</a></p>
+			<ul class="bullet-list">
+				<li class="first">如何选择及使用适合我的香水？</li>
+				<li>何处可以买到香奈儿的香水、彩妆及护肤品？</li>
+				<li>怎样可以找出适合我的粉底产品及色号？</li>
+				<li>我在哪里可以了解到相关产品的成分？</li>
+			</ul>
+		</div>
+		<!-- Bullet List End -->
+		
+		<!-- Bullet List Begin -->
+		<div class="bullet-list float-right">
+			<h4>一些实用功能</h4>
+			<p class="icon-list-1">克丽丝汀·迪奥: 克麗絲汀, 迪奧, 姫仙蒂婀 克里斯蒂昂 迪奥, КРИСТИАН ДИОР。
+严格禁止个人与私人非商业用途以外，使用网站的全部或部分内容，尤其是下载、复制、传送、展示或其它用途。</p>
+			<p class="icon-list-2"> Christian Dior克丽丝汀•迪奥化妆品公司保留未经告示，随时更新网站内容的权利。但是，Christian Dior克丽丝汀•迪奥化妆品公司不保证网站上数据的正确性、准确性与完整性。</p>
+			<p class="icon-list-3">网站是Christian Dior克丽丝汀•迪奥化妆品公司的专属财产，其为唯一原有或是经过明示授权而有权利使用其相关知识产权与人格权的实体，尤其是商标、模特、著作权与肖像权。</p>
+		</div>
+		<!-- Bullet List End -->
+		
+		<br class="clear"/>
+
+	</div>
+	
+	<div id="footer">
+		<div class="footer-main">
+			
+			<div class="back-to-top"><a href="#top"><img src="__PUBLIC__/bill/images/top.png" alt="回到顶部" border="0"/></a></div>
+			
+			<!-- Footer Column 1 Begin -->
+			<div class="left-column float-left">
+				<h5>快捷导航</h5>
+				<ul class="footer-nav">
+					<li class="first"><a href="#">客户服务：24小时 x 7天</a></li>
+					<li><a href="#">物流及发货信息</a></li>
+					<li><a href="#">分类过滤</a></li>
+					<li><a href="#">购物流程</a></li>
+					<li><a href="#">返利</a></li>
+					<li><a href="#">常见问题</a></li>
+				</ul>
+			</div>
+			<!-- Footer Column 1 End -->
+			
+			<!-- Footer Column 2 Begin -->
+			<div class="middle-column float-left">
+				<h5>订阅我们</h5>
+				<p>通过您的邮箱，第一时间获取我们最新发布的产品、打折促销、热卖推荐等信息！</p>
+				<p class="newsletter">
+					<input type="text" value="输入您的邮箱地址..." onfocus="if(this.value=='输入您的邮箱地址...'){this.value=''};" onblur="if(this.value==''){this.value='输入您的邮箱地址...'};" class="newsletter-field"/>
+					<input type="submit" id="go" value="GO" class="go-btn"/>
+				</p>
+			</div>
+			<!-- Footer Column 2 End -->
+			
+			<!-- Footer Column 3 Begin -->
+			<div class="left-column float-right">
+				<h5>联系我们</h5>
+				<p>北京昌平区LAMP兄弟连</p>
+
+				<p>
+					电话： +(010) 88888888<br/>
+					传真： +(010) 88888888<br/>
+					邮箱： <a href="#" class="footerlink">scz@mss.com</a><br/>
+				</p>
+				<p>
+					<a href="#" class="social"><img src="__PUBLIC__/bill/images/facebook.png" alt="facebook" border="0"/></a>
+					<a href="#" class="social"><img src="__PUBLIC__/bill/images/vimeo.png" alt="vimeo" border="0"/></a>
+					<a href="#" class="social"><img src="__PUBLIC__/bill/images/youtube.png" alt="youtube" border="0"/></a>
+					<a href="#" class="social"><img src="__PUBLIC__/bill/images/twitter.png" alt="twitter" border="0"/></a>
+					<a href="#" class="social"><img src="__PUBLIC__/bill/images/google.png" alt="google" border="0"/></a>
+				</p>
+			</div>
+			<!-- Footer Column 3 End -->
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+
+	// Megamenu
+	$(function() {
+						
+		var $menu = $('#ldd_menu');
+		
+		$menu.children('li').each(function(){
+			var $this = $(this);
+			var $span = $this.children('span');
+			$span.data('width',$span.width());
+			
+			$this.bind('mouseenter',function(){
+				$menu.find('.ldd_submenu').stop(true,true).hide();
+				$span.stop().animate({'width':'auto'},150,function(){
+					$this.find('.ldd_submenu').slideDown(300);
+				});
+			}).bind('mouseleave',function(){
+				$this.find('.ldd_submenu').stop(true,true).hide();
+				$span.stop().animate({'width':$span.data('width')+'px'},300);
+			});
+		});
+	});
+	
+	$(document).ready(function() {
+		
+		// Border effects
+		$("#main_navi li img").insetBorder({
+			borderColor : '#EDE6E9',
+			inset: 4
+		});
+		
+		// Navigation menu
+		$('ul.sf-menu').superfish({ 
+			delay: 100
+		});  
+		
+		// Slider
+		$(".slider").scrollable({
+			next: '.next2', 
+			prev: '.prev2'
+		});
+	
+		// Fancybox
+		$("a.grouped-elements").fancybox({
+			'titlePosition'	: 'inside'
+		});
+
+		$("a[rel=group4]").fancybox({
+			'transitionIn'		: 'none',
+			'transitionOut'		: 'none',
+			'titlePosition' 	: 'over',
+			'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+				return '<span id="fancybox-title-over">图片 ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+			}
+		});
+		
+		// Mouseover effect for thumbnails
+		$("a.grouped-elements").hover(function() {
+			  $(this).find(".imagehover").toggleClass("mouseon");
+		});
+		
+	});
+
+	$(window).load(function() {
+		// Main Promo Scroller
+		$("#main").scrollable({
+
+			vertical: true,
+			keyboard: 'static',
+			onSeek: function(event, i) {
+				horizontal.eq(i).data("scrollable").focus();
+			}
+		
+		}).navigator("#main_navi");
+
+		var horizontal = $(".scrollable").scrollable({ circular: true }).navigator(".navi");
+		horizontal.eq(0).data("scrollable").focus();
+	});
+	
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+		<!-- 包含顶部 -->
+		<include file="./Admin/Tpl/Index/header.html" />
+		
+
+<!-- ////////////////////////////////////////// 顶部 ///////////////////////////// -->
+
+		<!-- 后台颜色切换  -->
+<!-- 		<div id="style-switcher">
+			<i class="icon-arrow-left icon-white"></i>
+			<span>Style:</span>
+			<a href="#grey" style="background-color: #555555;border-color: #aaaaaa;"></a>
+			<a href="#blue" style="background-color: #2D2F57;"></a>
+			<a href="#red" style="background-color: #673232;"></a>
+		</div> -->
+		
+		<div id="content">
+        	<!-- 顶部右侧快捷操作按钮 开始 -->
+			<div id="content-header">
+				<h1>控制面板</h1>
+				<div class="btn-group">
+					<a class="btn btn-large tip-bottom" title="订单管理"><i class="icon-file"></i></a>
+					<a class="btn btn-large tip-bottom" title="用户管理"><i class="icon-user"></i></a>
+					<a class="btn btn-large tip-bottom" title="评论管理"><i class="icon-comment"></i><span class="label label-important">5</span></a>
+					<a class="btn btn-large tip-bottom" title="购物车管理"><i class="icon-shopping-cart"></i></a>
+				</div>
+			</div>
+            <!-- 顶部右侧快捷操作按钮 结束 -->
+            <!-- 顶部面包屑导航 开始 -->
+			<div id="breadcrumb">
+				<a href="#" title="返回首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+				<a href="#" class="current">控制面板</a>
+			</div>
+            <!-- 顶部面包屑导航 结束 -->
+			<div class="container-fluid">
+            	<!-- 顶部站点统计 大图标 开始 -->
+				<div class="row-fluid">
+						<ul class="stat-boxes">
+							<li>
+								<div class="left peity_bar_good">
+									<span>2,4,9,7,12,10,12</span>+20%
+								</div>
+								<div class="right">
+									<strong>36094</strong>访问
+								</div>
+							</li>
+							<li>
+								<div class="left peity_bar_neutral">
+									<span>20,15,18,14,10,9,9,9</span>0%
+								</div>
+								<div class="right">
+									<strong><{$stat.user}></strong>用户
+								</div>
+							</li>
+							<li>
+								<div class="left peity_bar_bad">
+									<span>3,5,9,10,12,20,80</span>-50%
+								</div>
+								<div class="right">
+									<strong><{$stat.order}></strong>订单
+								</div>
+							</li>
+							<li>
+								<div class="left peity_line_good">
+									<span>12,6,9,23,14,10,17</span>+70%
+								</div>
+								<div class="right">
+									<strong><{$stat.order}></strong>订单
+								</div>
+							</li>
+						</ul>
+					</div>	
+				</div>
+                <!-- 顶部站点统计 大图标 结束 -->
+                <!--  -->
+				<div class="row-fluid">
+					<div class="span12">
+<!-- 						<div class="alert alert-info">
+							欢迎使用 <strong>Unicorn Admin 主题</strong>。
+							<a href="#" data-dismiss="alert" class="close">×</a>
+						</div> -->
+                        <!-- 组件盒子 站点统计 -->
+						<div class="widget-box">
+                        	<!-- 标题 -->
+							<div class="widget-title"><span class="icon"><i class="icon-signal"></i></span><h5>站点统计</h5><div class="buttons"><a href="#" class="btn btn-mini"><i class="icon-refresh"></i> 刷新</a></div></div>
+                            <!-- 内容 -->
+							<div class="widget-content">
+								<div class="row-fluid">
+                                <!-- 左侧信息区 -->
+								<div class="span4">
+									<ul class="site-stats">
+										<li><i class="icon-user"></i> <strong><{$stat.user}></strong> <small>总用户数</small></li>
+										<li><i class="icon-arrow-right"></i> <strong><{$stat.lastuser}></strong> <small>名新注册用户（上周）</small></li>
+										<li class="divider"></li>
+										<li><i class="icon-shopping-cart"></i> <strong><{$stat.goods}></strong> <small>件商品</small></li>
+										<li><i class="icon-tag"></i> <strong><{$stat.complete}></strong> <small>条已完成交易</small></li>
+										<li><i class="icon-repeat"></i> <strong><{$stat.imperfect}></strong> <small>条未完成订单</small></li>
+									</ul>
+								</div>
+                                <!-- 右侧图表区 -->
+								<div class="span8">
+									<div class="chart"></div>
+								</div>	
+								</div>						
+							</div>
+						</div>					
+					</div>
+				</div>
+                <!-- 下部组件 -->
+				<div class="row-fluid">
+					<!-- -->
+					<div class="span6">
+						<div class="widget-box">
+							<!-- 标题 -->
+							<div class="widget-title"><span class="icon"><i class="icon-comment"></i></span><h5>操作动态</h5></div>
+							<!-- 内容部分 开始 -->
+							<div class="widget-content nopadding">
+								<foreach name="log" item="v">
+									<{$v.loginfo}><br />
+								</foreach>
+							</div>
+							<!-- 内容部分 结束-->
+						</div>
+					</div>
+					<!-- -->
+					<div class="span6">
+						<div class="widget-box">
+							<!-- 标题 -->
+							<div class="widget-title"><span class="icon"><i class="icon-comment"></i></span><h5>系统信息</h5></div>
+							<!-- 内容部分 开始 -->
+							<div class="widget-content nopadding">
+								<table class="table table-bordered">
+									<tbody>
+										<tr>
+											<td>服务器操作系统：</td>
+											<td><{$sysinfo.os}>&nbsp;<{$sysinfo.ip}></td>
+										</tr>
+										<tr>
+											<td>Web 服务器：</td>
+											<td><{$sysinfo.web_server}></td>
+										</tr>
+										<tr>
+											<td>PHP 版本：</td>
+											<td><{$sysinfo.php_ver}></td>
+										</tr>
+										<tr>
+											<td>MySQL 版本：</td>
+											<td>5.0.51b-community-nt-log</td>
+										</tr>
+										<tr>
+											<td>ThinkPHP 版本：</td>
+											<td><{$Think.version}></td>
+										</tr>
+										<tr>
+											<td>MSS 版本：</td>
+											<td>V1.0</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- 内容部分 结束-->
+						</div>
+					</div>
+				</div>
+					
+	<!--//////////////////////////////////////////////  底部 //////////////////////////////////-->
+
+		<!-- 包含底部 -->
+		<include file="./Admin/Tpl/Index/footer.html" />

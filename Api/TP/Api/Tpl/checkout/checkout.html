@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<!--[if IE 7 ]><html class="ie ie7 lte9 lte8 lte7" lang="en-US"><![endif]-->
+<!--[if IE 8]><html class="ie ie8 lte9 lte8" lang="en-US">	<![endif]-->
+<!--[if IE 9]><html class="ie ie9 lte9" lang="en-US"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="noIE" lang="en-US"><!--<![endif]-->
+<head>
+	<title>商品结算</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<!-- Bootstrap不支持IE的兼容模式，此处使IE浏览器运行最新的渲染模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 响应式布局开启视窗控制 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 页面信息 -->
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="author" content="四重奏项目组/SC">
+
+	<!-- GENERAL CSS FILES -->
+	<link rel="stylesheet" href="__PUBLIC__/index/css/minified.css">
+	<!-- // GENERAL CSS FILES -->
+	
+	<!--[if IE 8]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/selectivizr-min.js"></script>
+	<![endif]-->
+	<!--加载自定义的js文件 
+	<script src="__PUBLIC__/js/checkout.js"></script>
+	<script src="__PUBLIC__/js/ajax2.js"></script>-->
+	<script>window.jQuery || document.write('<script src="__PUBLIC__/index/js/jquery.min.js"><\/script>');</script>
+	<script src="__PUBLIC__/index/js/modernizr.min.js"></script>	
+
+	<!-- PARTICULAR PAGES CSS FILES -->
+	<link rel="stylesheet" href="__PUBLIC__/index/css/innerpage.css">
+	<!-- // PARTICULAR PAGES CSS FILES -->
+	<link rel="stylesheet" href="__PUBLIC__/index/css/responsive.css">
+</head>
+<body>
+<script>
+		$(function(){
+			var session = $("#session").val();
+			if(session){
+					$("#unlogin").show();
+					$("#islogin").hide();
+			}else{
+				   $("#unlogin").hide();
+			}
+			
+			$("#cart_update").click(function(){
+					var url = "__APP__/Cart/cart";
+					location.href = url;
+			})
+
+			$("#qiehuan").click(function(){
+
+						var flag = 0;
+
+						if(flag == 0){
+								$("#dizhi").slideToggle(600);
+								$("#dizhi2").slideToggle(600);
+						}else{
+								$("#dizhi").slideToggle(600);
+								$("#dizhi2").slideToggle(600);
+						}
+			})
+
+			$('#saveaddr').click(function(){
+ 					  var flag1 = 0;
+ 					  //$("input[name='newsletter']").attr("checked", true);
+					  var id = $(".zdizhi:checked").val();
+
+						if(flag1 == 0){
+								$("#dizhi2").toggle(1000);
+								$("#dizhi").toggle(1000);
+						}else{
+								$("#dizhi2").toggle(1000);
+								$("#dizhi").toggle(1000);
+						}
+
+						//如果存在
+						if(id){
+							  var url = "__URL__/getaddr/id/"+id;
+
+								$.get(url,function(data){
+								var receiver = data.receiver;
+								var province = data.province1;
+								var city = data.city1;
+								var area = data.area1;
+								var street = data.street;
+								var email = data.email;
+								var tel = data.tel;
+								var mobile = data.mobile;
+							   var postcode = data.postcode;
+
+							   $("#mreceiver").val(receiver);
+							   $("#maddr").val(province+city+area+street);
+							   $("#memail").val(email);
+							   $("#mtel").val(tel);
+							   $("#mmobile").val(mobile);
+							   $("#mpostcode").val(postcode);
+							  },'json');
+
+								//改变shuoid的值
+								$("input[name='shouid']").val(id);
+							 
+						}else{
+								var receiver = $("#receiver").val();
+							   var province = $("#province").val();
+								var city = $("#city").val();
+								var area = $("#area").val();
+								var street = $("#street").val();
+								var email = $("#email").val();
+								var tel = $("#tel").val();
+								var mobile = $("#mobile").val();
+							   var postcode = $("#postcode").val();
+
+							  var url = "__URL__/addaddr";
+
+								$.get(url,{receiver:receiver,province:province,city:city,area:area,street:street,email:email,tel:tel,mobile:mobile,postcode:postcode},function(data){
+												  var id = data;
+												  var url = "__URL__/getaddr/id/"+id;
+
+													$.get(url,function(data){
+																var receiver = data.receiver;
+																var province = data.province1;
+																var city = data.city1;
+																var area = data.area1;
+																var street = data.street;
+																var email = data.email;
+																var tel = data.tel;
+																var mobile = data.mobile;
+															   var postcode = data.postcode;
+
+															   $("#mreceiver").val(receiver);
+															   $("#maddr").val(province+city+area+street);
+															   $("#memail").val(email);
+															   $("#mtel").val(tel);
+															   $("#mmobile").val(mobile);
+															   $("#mpostcode").val(postcode);
+												  },'json');
+
+													$("input[name='shouid']").val(id);
+					 			});
+						}	
+							   
+						
+
+						
+			});
+
+			$(".zdizhi").click(function(){
+	
+						var id = $(this).val();
+						var url = "__URL__/getaddr/id/"+id;
+
+						$("#receiver").attr("disabled",true);
+					   $("#street").attr("disabled",true);
+					   $("#email").attr("disabled",true);
+					   $("#tel").attr("disabled",true);
+					   $("#mobile").attr("disabled",true);
+					   $("#postcode").attr("disabled",true);
+						$("#province").attr("disabled",true);
+						//隐藏
+						$("#city").attr("disabled",true);
+					   $("#area").attr("disabled",true);
+
+						$.get(url,function(data){
+								var receiver = data.receiver;
+								var province = data.province1;
+								var city = data.city1;
+								var area = data.area1;
+								var street = data.street;
+								var email = data.email;
+								var tel = data.tel;
+								var mobile = data.mobile;
+							   var postcode = data.postcode;
+
+							   $("#receiver").val(receiver);
+							   //$("ul li:first-child")
+							   //$("select option:selected")
+							   $("#province option:selected").html(province);
+							   $("#city option:selected").html(city);
+							   $("#area option:selected").html(area);
+							   $("#street").val(street);
+							   $("#email").val(email);
+							   $("#tel").val(tel);
+							   $("#mobile").val(mobile);
+							   $("#postcode").val(postcode);
+
+						},'json');
+
+			})
+
+			//地址省份province
+			//获取市
+			$("#province").change(function(){
+
+				    var region_id = $(this).val();
+				    var url = "__URL__/getcity/region_id/"+region_id;
+					 $("#city").empty();
+					 $("#area").empty();
+				    var obj = $(this);
+					 $.get(url,function(data){
+					 				for(var i in data){
+					 			
+					 						$("#city").append('<option value="'+data[i].region_id+'">'+data[i].region_name+'</option>');
+					 				}
+							
+					 },'json');
+			})
+
+			$("#city").change(function(){
+				
+				    var region_id = $(this).val();
+				    var url = "__URL__/getarea/region_id/"+region_id;
+				    var obj = $(this);
+					 $.get(url,function(data){
+					 				for(var i in data){
+					 						
+					 						$("#area").append('<option value="'+data[i].region_id+'">'+data[i].region_name+'</option>');
+					 				}
+							
+					 },'json');
+			})
+
+			$("#zdizhi2").click(function(){
+						$("#receiver").val("");
+					   $("#street").val("");
+					   $("#email").val("");
+					   $("#tel").val("");
+					   $("#mobile").val("");
+					   $("#postcode").val("");
+
+					   $("#receiver").attr("disabled",false);
+					   $("#street").attr("disabled",false);
+					   $("#email").attr("disabled",false);
+					   $("#tel").attr("disabled",false);
+					   $("#mobile").attr("disabled",false);
+					   $("#postcode").attr("disabled",false);
+
+
+					   $("#province").attr("disabled",false);
+					   $("#city").attr("disabled",false);
+					   $("#area").attr("disabled",false);
+			
+			})
+
+			//未登录用户点击 继续
+			//转为注册或者登录
+			$("#userregister").click(function(){
+					if($('input:radio[name="customer"]:checked').val() == 'login')
+					{
+						var url = "__APP__/Login/login";
+					}
+					else
+					{
+						var url = "__APP__/Register/register";
+					}
+					location.href = url;
+			})
+
+			//用户登录
+			$("#userlogin").click(function(){
+					 
+					 var username = $("#username").val();
+					 var userpwd = $("#userpwd").val();
+					 $.ajax({
+			   			type: "get",
+			   			url: "__APP__/Login/loginVerify/username/"+username+"/userpwd/"+userpwd,
+			   			success: function(msg){ 
+			   				location.href = window.location.href ;
+			   			}
+				})
+					
+					 
+			})
+
+			//支付方式paymethod
+
+			$(".peisong").click(function(){
+
+					var id = $(this).val();
+					var url = "__URL__/peisong/id/"+id;
+
+					$.get(url,function(data){
+
+								var yunfei = data.yunfei;
+								$(".peisongfei").html(yunfei);
+								var atotalprice = $(".atotalprice").html();
+								var count= atotalprice*1+1*yunfei;
+								$(".atotalprice").html(count);
+							
+					},'json');
+			})
+
+		})		
+</script>
+			
+	<!-- PAGE WRAPPER -->
+<div id="page-wrapper">
+	<!-- 站点头部 -->
+	<include file="./Index/Tpl/Index/header.html" />
+	
+		<!-- BREADCRUMB -->
+		<div class="breadcrumb-container">
+			<div class="container">
+				<div class="relative">
+					<ul class="bc unstyled clearfix">
+						<li><a href="#">首页</a></li>
+						<li class="active">结算中心</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- // BREADCRUMB -->
+
+		<!-- SITE MAIN CONTENT -->
+		<main id="main-content" role="main">
+		
+			<div class="container">
+				<div class="row">
+					
+					<div class="m-t-b clearfix">
+						<!-- SIDEBAR -->
+						<aside class="col-xs-12 col-sm-4 col-md-3">
+							<section class="side-section">
+								<h3 class="uppercase text-bold"><span class="text-xs">站内地图</span></h3>
+								
+								<ul class="nav nav-tabs nav-stacked">
+									<li><a href="__APP__">店铺首页</a></li>															
+									<li><a href="">关于店铺</a></li>															
+									<li><a href="__APP__/Products/products/sale/3">近期活动</a></li>															
+									<li><a href="__APP__/Products/products/all">商品列表</a></li>															
+									<li><a href="">联系我们</a></li>															
+								</ul>
+							</section>
+								
+							<div class="promo inverse-background" style="background: url('__PUBLIC__/Uploads/goods/<{$ngoods[0]['pic']}>') no-repeat; background-size: 100% auto;">
+								<div class="inner text-center np">
+									<div class="ribbon">
+										<h6 class="nmb">最近上架</h6>
+										<div class="space10"></div>
+										<h5 class="text-semibold uppercase nmb">
+											<{$ngoods[0]['gname']}>
+										</h5>
+										<div class="space10"></div>
+										<a href="__APP__/Products/product/id/<{$ngoods[0]['id']}>" class="with-icon prepend-icon"><i class="iconfont-caret-right"></i><span> 就去购</span></a>
+									</div>
+								</div>
+							</div>
+						</aside>
+						<!-- // SIDEBAR -->
+
+						<form action="__APP__/Pay/index" method="post">
+						<section class="col-xs-12 col-sm-8 col-md-9">
+							<div class="panel-group checkout" id="checkout-collapse">
+								<div class="panel panel-default" id="islogin">
+									<div class="panel-heading">
+										<h4 class="panel-title"><a data-toggle="collapse" data-parent="#checkout-collapse" href="#checkout-collapse1"><span class="step">01</span>个人信息</a></h4>
+									</div>
+									<div id="checkout-collapse1" class="panel-collapse collapse in">
+										<div class="panel-body">
+											<div class="row">
+												<div class="col-xs-12 col-sm-6">
+														<fieldset>
+															<legend class="title">如果你是新买家</legend>
+															<div class="inner">
+																<p>请选择以下选项：</p>
+																<div class="form-account">
+																	<div class="radio">
+																		<input type="radio" name="customer" id="radio-register" class="prettyCheckable" value="regesiter" checked="checked" data-label="注册本站会员" />
+																	</div>
+																	<div class="radio">
+																		<input type="radio" name="customer" id="radio-login" class="prettyCheckable" value="login" data-label="使用第三方登录" />
+																	</div>
+																</div>
+																<p class="light-color">亲!<br/>注册韩都衣舍用户购买商品有更多的优惠哦!</p>
+																<div class="space20 clearfix"></div>
+																<input type="hidden" value="checkout" name="checkout">
+																<input type="button" class="btn btn-default btn-round uppercase padder" id="userregister" value="继续">
+															</div>
+														</fieldset>
+												</div>
+												<div class="space40 visible-xs"></div>
+												<div class="col-xs-12 col-sm-6">
+													<div class="form-horizontal">
+														<fieldset>
+															<legend class="title">已注册会员</legend>
+															<div class="inner">
+																<p>请输入用户名和密码登录</p>
+																<div class="form-login">
+																	<div class="form-group stylish-input">
+																		<label for="inputEmail" class="col-xs-12 col-sm-3 control-label required">用户名：</label>
+																		<div class="col-lg-7">
+																			<input type="text" class="form-control" id="username">
+																		</div>
+																	</div>
+																	<div class="form-group stylish-input">
+																		<label for="inputPassword" class="col-xs-12 col-sm-3 control-label required">密码：</label>
+																		<div class="col-lg-7">
+																			<input type="password" class="form-control" id="userpwd">
+																			<a href="__APP__/Personal/center" class="help-block">忘记密码？</a>
+																		</div>
+																	</div>
+																</div>
+																	<input type="button" id="userlogin" class="btn btn-primary btn-round padder" value="登录"/>
+															</div>
+														</fieldset>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+				
+						<div class="unlogin" id="unlogin">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#checkout-collapse" href="#checkout-collapse2">
+												<span class="step">02</span>
+												商品列表（描述、小计等）
+											</a>
+										</h4>
+									</div>
+									<div id="checkout-collapse2" class="panel-collapse collapse">
+										<div class="panel-body">
+											<div class="form-horizontal" role="form">
+												<div class="row">
+													<div class="col-xs-12 col-sm-12 col-md-6" style="width:800px;">
+														<table border="1" width="800">	
+															<tr>
+																<th>商品名称</th>
+																<th>商品图片</th>
+																<th>商品属性</th>
+																<th>市场价</th>
+																<th>本店价	</th>
+																<th>购买数量</th>
+																<th>小计</th>
+															</tr>
+									
+															<foreach name="gdata" item="vo">
+																<!--商品id-->
+																<input type="hidden" name="goodid[]" value="<{$vo.id}>">						
+																<!--货品id-->
+																<input type="hidden" name="guigeid[]" value="<{$vo.gtypeid}>">
+																<!--商品货品的数量-->	
+																<input type="hidden" name="addnum[]" value="<{$vo.addnum}>">
+																<!--商品货品的价格-->	
+																<input type="hidden" name="price[]" value="<{$vo.price}>">
+																<!--商品货品的小计-->
+																<input type="hidden" name="xiaoji[]" value="<{$vo['price']*$vo['addnum']}>">
+		
+																	<tr>
+																     <td><a href="__APP__/Products/product/id/<{$vo.id}>"><{$vo.gname}> </td>
+																     <td><a href="__APP__/Products/product/id/<{$vo.id}>"><img src="__PUBLIC__/Uploads/goods/<{$vo.pic}>" width="50"/></a></td>
+																     <td></td>
+																     <td><{$vo.mprice}></td>
+																     <td><{$vo.price}></td>
+																     <td><{$vo.addnum}></td>
+																     <td><{$vo['price']*$vo['addnum']}></td>
+																	</tr>
+															</foreach>
+														</table>
+
+														 <!-- 提交表单商品信息开始 -->
+														 <!-- 购物车购买的商品总数量-->																
+														 <!-- 提交表单商品信息结束 -->
+													</div>
+												</div>
+								
+												<input type="button" class="btn btn-primary" id="cart_update" title="去购物车重新选择" value="修改"/>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#checkout-collapse" href="#checkout-collapse3">
+												<span class="step">03</span>
+												收货人信息
+											</a>
+										</h4>
+									</div>
+									<div id="checkout-collapse3" class="panel-collapse collapse">
+
+									<!-- 收货人主体部分开始-->
+										<div class="panel-body" id="dizhi" style='display:block;'>
+											<div class="form-horizontal" role="form">
+												<div class="row">
+													<div class="col-xs-12 col-sm-12 col-md-6">
+														<div class="form-group stylish-input">
+															<label for="inputFirstname" class="col-sm-4 col-lg-4 control-label required">姓名</label>
+															<div class="col-sm-8 col-lg-8">
+																<input type="text" class="form-control" id="mreceiver" value="<{$madata.receiver}>" style="width:400px;" readonly/>
+															</div>
+														</div>
+														<div class="form-group stylish-input">
+															<label for="inputLastname" class="col-sm-4 col-lg-4 control-label required">地址</label>
+															<div class="col-sm-8 col-lg-8">
+																<input type="text" class="form-control" id="maddr" value="<{$madata.province1}><{$madata.city1}><{$madata.area1}><{$madata.street1}>"  style="width:400px;" readonly/>
+															</div>
+														</div>
+
+														<div class="form-group stylish-input">
+															<label for="inputEmail2" class="col-sm-4 col-lg-4 control-label required">E-Mail</label>
+															<div class="col-sm-8 col-lg-8">
+																<input type="text" class="form-control" id="memail" value="<{$madata.email}>"  style="width:400px;" readonly/>
+															</div>
+														</div>
+														
+														<div class="form-group stylish-input">
+															<label for="inputPhone" class="col-sm-4 col-lg-4 control-label required">电话号码</label>
+															<div class="col-sm-8 col-lg-8">
+																<input type="text" class="form-control" id="mtel" value="<{$madata.tel}>" style="width:400px;" readonly/>
+															</div>
+														</div>
+														<div class="form-group stylish-input">
+															<label for="inputFax" class="col-sm-4 col-lg-4 control-label">手机号</label>
+															<div class="col-sm-8 col-lg-8">
+																<input type="text" class="form-control" id="mmobile" value="<{$madata.mobile}>" style="width:400px;" readonly/>
+															</div>
+														</div>
+														<div class="form-group stylish-input">
+															<label for="inputCompany" class="col-sm-4 col-lg-4 control-label">邮编</label>
+															<div class="col-sm-8 col-lg-8">
+																<input type="text" class="form-control" id="mpostcode" value="<{$madata.postcode}>" style="width:400px;" readonly/>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="space20 clearfix"></div>
+												<input type="button" class="btn btn-primary" title="修改默认收货地址" id="qiehuan" value="修改"/>
+											</div>
+										</div>
+
+										 <!-- 提交表单收获人信息开始 -->	
+										 <input type="hidden" id="session" value="<{$Think.session.uid}>"/>
+										 <!-- 收货人id-->
+										 <input type="hidden" name="shouid" value="<{$madata.id}>"/>
+										 <!-- 收货人id-->
+										 <input type="hidden" name="buynum" value="<{$tongji.totalnum}>"/>
+										 <input type="hidden" name="totalprice" value="<{$tongji.totalprice}>"/>
+										 
+										 <!-- 提交表单收货人信息结束 -->
+
+										<!--收货表单信息 开始-->
+										 <div class="panel-body" id='dizhi2' style="display:none">
+										 <!-- 常用收货地址开始 -->
+										   <div class="prompt_4 m_10" >
+													<strong>常用收货地址</strong>
+													<ul class="addr_list" style="list-style:none">
+														<foreach name="adata" item="row">
+																<li>
+																	<label>
+																	<input  class="zdizhi" name="addr" type="radio" value="<{$row.id}>" <if condition="$row.isdefault eq 1">checked</if>/>
+																	<{$row.receiver}>&nbsp;&nbsp;&nbsp;&nbsp;<{$row.province1}> <{$row.city1}> <{$row.area1}> <{$row.street}>
+																	</label>
+																</li>
+														 </foreach>
+														     <li>
+															<label><input type='radio' name="addr" id="zdizhi2" value='' />其他收货地址</label>
+														    </li>
+													</ul>
+												</div>
+
+											<!-- 常用收货地址结束 -->
+											<div class="form-horizontal" role="form">
+												<div class="row">
+													<div class="col-xs-12 col-sm-12 col-md-6">
+												<div class="form-group stylish-input" style="width:620px;">
+															<label for="inputFirstname" class="col-sm-4 col-lg-4 control-label required">姓名</label>
+															<div class="col-sm-8 col-lg-8">
+																<input type="text" class="form-control" id="receiver" value="<{$madata.receiver}>" name="receiver" disabled/>
+															</div>
+												</div>
+
+												<div class="form-group stylish-input" style="width:620px;">
+													<label for="inputFirstname" class="col-sm-4 col-lg-4 control-label required">省份</label>
+													<div class="col-sm-8 col-lg-8">
+								
+														<select id="province" name="province" style="width:100px;border:#CCCCCC 1px solid;" disabled>
+															<foreach name="prodata" item="vo">
+																		<option value="<{$vo.region_id}>" <if condition="$vo['region_id'] eq $madata['province']">selected</if>><{$vo.region_name}></option>
+														   </foreach>
+													 </select>
+
+														<select  id="city" name="city" style="width:130px;border:#CCCCCC 1px solid;" disabled>
+																<option value="<{$madata.city}>"><{$madata.city1}></option>
+														</select>
+
+														<select id="area" style="width:145px;border:#CCCCCC 1px solid;" disabled>
+																<option  value="<{$madata.area}>"><{$madata.area1}></option>
+														</select>
+													</div>
+												</div>
+
+													<div class="form-group stylish-input" style="width:620px;">
+															<label for="inputEmail2" class="col-sm-4 col-lg-4 control-label required">街道</label>
+															<div class="col-sm-8 col-lg-8">
+																<input type="text" class="form-control" id="street" value="<{$madata.street}>" disabled/>
+															</div>
+														</div>
+												
+														<div class="form-group stylish-input" style="width:620px;">
+															<label for="inputEmail2" class="col-sm-4 col-lg-4 control-label required">E-Mail</label>
+															<div class="col-sm-8 col-lg-8">
+																<input type="email" class="form-control" id="email" value="<{$madata.email}>" disabled/>
+															</div>
+														</div>
+
+														<div class="form-group stylish-input" style="width:620px;">
+															<label for="inputPhone" class="col-sm-4 col-lg-4 control-label required">电话号码</label>
+															<div class="col-sm-8 col-lg-8">
+																<input type="text" class="form-control" id="tel" value="<{$madata.tel}>" disabled/>
+															</div>
+														</div>
+														<div class="form-group stylish-input" style="width:620px;">
+															<label for="inputFax" class="col-sm-4 col-lg-4 control-label">手机号</label>
+															<div class="col-sm-8 col-lg-8">
+																<input type="text" class="form-control" id="mobile" value="<{$madata.mobile}>" disabled/>
+															</div>
+														</div>
+														<div class="form-group stylish-input" style="width:620px;">
+															<label for="inputCompany" class="col-sm-4 col-lg-4 control-label">邮编</label>
+															<div class="col-sm-8 col-lg-8">
+																<input type="text" class="form-control" id="postcode" value="<{$madata.postcode}>" disabled/>
+															</div>
+														</div>
+													</div>
+											
+												</div>
+												<div class="space20 clearfix"></div>
+												<button type="button" class="btn btn-primary" title="修改默认收货地址" id="saveaddr">保存收货人地址</button>
+											</div>
+										</div>
+										<!--收货表单信息 结束-->									
+						<!-- 收货人主体部分结束-->
+								</div>
+							</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#checkout-collapse" href="#checkout-collapse4">
+												<span class="step">04</span>
+												支付方式
+											</a>
+										</h4>
+									</div>
+									<div id="checkout-collapse4" class="panel-collapse collapse">
+										<div class="panel-body">
+										<table border="1" width="">
+											<div class="paymethod" role="form">
+												<tr>
+												<th width="100">名称</th>
+												<th width="100">图像</th>
+												<th>描述</th>
+												</tr>
+												<foreach name="pdata" item="vo">
+												<tr>
+												<div class="form-group stylish-input">
+													<td>
+													<input type="radio" class="prettyCheckable" name="deliverymethod" data-label="<{$vo.name}>" value="<{$vo.id}>" <if condition="$vo.id eq 1">checked</if>/>
+													</td>
+													<td><img src="__PUBLIC__/Uploads/pays/<{$vo.pay_logo}>" width="60"></td>
+													<td>
+													<p><{$vo.descr}></p>
+													</td>
+												</div>
+												</tr>
+												</foreach>
+												
+											</div>
+											</table>
+										</div>
+									</div>
+								</div>
+	
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#checkout-collapse" href="#checkout-collapse5">
+												<span class="step">05</span>
+												物流和配送方式
+											</a>
+										</h4>
+									</div>
+									<div id="checkout-collapse5" class="panel-collapse collapse">
+										<div class="panel-body">
+											<div class="paymethod" role="form">
+											<table border="1">
+														<tr>
+														<th width="300">配送名称</th>
+														<th>描述</th>
+														</tr>
+											  <foreach name="ddata" item="row">
+												<div class="form-group stylish-input">
+													<tr>
+														<td>
+															<input type="radio" class="peisong" name="paymethod" value="<{$row.id}>" <if condition="$row.id eq 2">checked</if>/>
+															<{$row.name}>
+														</td>
+														<td>
+															<{$row.description}>
+														</td>
+													</tr>
+												</div>
+												</foreach>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#checkout-collapse" href="#checkout-collapse6">
+												<span class="step">06</span>
+												订单留言
+											</a>
+										</h4>
+									</div>
+									<div id="checkout-collapse6" class="panel-collapse collapse">
+										<div class="panel-body">
+											<div class="paymethod" role="form">
+						
+												<div class="form-group stylish-input">
+													订单附言:<input type="text" name="uremark" size="50"/>
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#checkout-collapse" href="#checkout-collapse7">
+												<span class="step">07</span>
+												结算信息
+											</a>
+										</h4>
+									</div>
+									<div id="checkout-collapse7" class="panel-collapse collapse">
+										<div class="panel-body">
+											<div class="row">
+												<div class="col-xs-12 col-sm-6 pull-right center-sm">
+													<table class="shop-summary">
+														<tr>
+															<th>小计：</th>
+															<td>￥<{$tongji.totalprice}></td>
+														</tr>
+														<tr>
+															<th>配送费用 (+<font class="peisongfei">11.00</font>)：</th>
+															<td>￥<font class="peisongfei">11.00</font></td>
+														</tr>
+														<tr class="total">
+															<th>应付金额：</th>
+															<td >￥<{$tongji['totalprice']}>+<font class="peisongfei">11.00</font></td>
+														</tr>
+														<tr>
+															<th>				
+															<input type="submit" class="btn btn-default btn-round uppercase" value="确认，提交订单"/>
+															</th>
+															<td>
+															<a href="#" class="btn btn-primary btn-round uppercase">继续购物</a>
+															</td>
+														</tr>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							</div>
+
+						</section>
+						</form>
+						
+					</div>
+				
+				</div>
+			</div>
+		
+		</main>
+		<!-- // SITE MAIN CONTENT -->
+
+		<!-- 站点页脚 -->
+		<include file="./Index/Tpl/Index/footer.html" />
+
+</div>
+<!-- // PAGE WRAPPER -->
+
+<!-- Essential Javascripts -->
+<script src="__PUBLIC__/index/js/minified.js"></script>
+<!-- // Essential Javascripts -->
+
+<!-- Particular Page Javascripts -->
+<script src="__PUBLIC__/index/js/products.js"></script>
+<!-- // Particular Page Javascripts -->
+</body>
+</html>
+
+

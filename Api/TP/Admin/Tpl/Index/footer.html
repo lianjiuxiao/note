@@ -1,0 +1,35 @@
+			
+            <!-- 页面底部版权 -->
+			<div class="row-fluid">
+				<div id="footer" class="span12">
+					Copyright &copy; 2014 <span class="label label-important">四重奏项目组</span> All Rights Reserved. 
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- 加载相关JS文件 -->
+    <script src="__PUBLIC__/admin/js/excanvas.min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.ui.custom.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.uniform.js"></script>
+    <script src="__PUBLIC__/admin/js/select2.min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.dataTables.min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.flot.min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.flot.resize.min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.peity.min.js"></script>
+    <script src="__PUBLIC__/admin/js/unicorn.js"></script>
+    <script src="__PUBLIC__/admin/js/unicorn.tables.js"></script>
+    <script src="__PUBLIC__/admin/js/unicorn.dashboard.js"></script>
+
+    <script>
+        // 侧边菜单栏，高亮当前模块 样式设置
+    
+        // 去除之前的样式
+        $("li[class='active']").removeClass("active");
+        // 高亮当前样式
+        $("li[id='<{$Think.MODULE_NAME|strtolower}>']").addClass("active");
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!-- 包含顶部 --> 
+<include file="./Admin/Tpl/Index/header.html" />
+
+
+<div id="content">
+	<!-- 顶部右侧快捷操作按钮 开始 -->
+		<div id="content-header">
+			<h1>邮件管理</h1>
+			<div class="btn-group">
+				<a class="btn btn-large tip-bottom" title="订单管理"><i class="icon-file"></i></a>
+				<a class="btn btn-large tip-bottom" title="用户管理"><i class="icon-user"></i></a>
+				<a class="btn btn-large tip-bottom" title="评论管理"><i class="icon-comment"></i><span class="label label-important">5</span></a>
+				<a class="btn btn-large tip-bottom" title="购物车管理"><i class="icon-shopping-cart"></i></a>
+			</div>
+		</div>
+        <!-- 顶部右侧快捷操作按钮 结束 -->
+        <!-- 顶部面包屑导航 开始 -->
+		<div id="breadcrumb">
+			<a href="__APP__" title="返回首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+			<a href="__URL__/lists" title="返回邮件管理" class="tip-bottom"> 邮件管理</a>
+			<a href="#" class="current"> 邮件模板列表</a>
+		</div>
+		<!-- 顶部面包屑导航 结束 -->
+		<!-- 主体区域 -->
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span12">
+					<!-- 组件盒子 开始 -->
+					<div class="widget-box">
+						<!-- 组件标题区域 -->
+						<div class="widget-title"><h5>邮件模板列表</h5></div>
+						<!-- 组件内容区域 -->
+						<div class="widget-content nopadding">
+							<table class="table table-bordered data-table">
+								<!-- 表头字段区域 -->
+								<thead>
+									<tr>
+										<th>模板标题</th>
+										<th>模板描述</th>
+										<th>模板操作</th>
+									</tr>
+								</thead>
+								<!-- 表格主体数据区域 -->
+								<tbody>
+								<foreach name="data" item="v">
+									<tr>
+										<td><{$v.title}></td>
+										<td><{$v.description}></td>
+										<td class="taskOptions">
+									    	<a href="__URL__/send/id/<{$v.id}>" class="tip-top" data-original-title="发送"><i class="icon-share-alt"></i></a>&nbsp;&nbsp;<a href="__URL__/upda/id/<{$v.id}>" class="tip-top" data-original-title="编辑"><i class="icon-pencil"></i></a>&nbsp;&nbsp;<a href="__URL__/del/id/<{$v.id}>" class="tip-top" data-original-title="删除"><i class="icon-remove"></i></a>
+										</td>
+									</tr>
+								</foreach>
+								</tbody>
+							</table>  
+						</div>
+					</div>
+					<!-- 组件盒子 结束 -->
+				</div>
+			</div>
+			
+<!-- 包含底部 -->
+<include file="./Admin/Tpl/Index/footer.html" />

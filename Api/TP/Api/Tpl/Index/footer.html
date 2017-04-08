@@ -1,0 +1,118 @@
+	<!-- SITE FOOTER 网站页脚 -->
+<footer class="page-footer">
+	
+	<!-- WIDGET AREA 小部件区域 -->
+	<div class="widgets">
+	
+		<!-- FIRST ROW 第一行 -->
+		<div class="section">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-xs-12 col-sm-12 col-md-3">
+						<section class="widget widget-menu">
+							<h5 class="widget-title">联系方式</h5>
+							<div class="widget-content">
+								<ul class="menu iconed-list unstyled">
+									<li>
+										<span class="list-icon"><i class="round-icon iconfont-map-marker"></i></span>
+										<div class="list-content"><{$foot.address}></div>
+									</li>
+									<li>
+										<span class="list-icon"><i class="round-icon iconfont-phone"></i></span>
+										<div class="list-content"><{$foot.cellphone}></div>
+									</li>
+									<li>
+										<span class="list-icon"><i class="round-icon iconfont-envelope-alt"></i></span>
+										<div class="list-content"><{$foot.aemail}></div>
+									</li>
+									<li>
+										<span class="list-icon"><i class="round-icon iconfont-weibo"></i></span>
+										<div class="list-content"><{$foot.weibo}></div>
+									</li>
+								</ul>
+							</div>
+						</section>
+					</div>
+
+					<div class="col-xs-12 col-sm-6 col-md-4">
+						<section class="widget widget-text">
+							<h5 class="widget-title">关于本店</h5>
+							<div class="widget-content">
+								<p>本店是韩都衣舍旗下女装品牌HSTYLE—韩风时尚女装。</p>
+								<p>以产品"款式多、更新快、性价比高"而迅速赢得都市时尚人群信赖。</p>
+								<p>韩都衣舍目标销售对象为都市时尚人群，公司旗下有超过500人的专业时尚设计师团队，并在韩国拥有分公司，同1000余家时尚品牌公司保持着紧密的、全方位的合作关系。
+								</p>
+							</div>
+						</section>
+					</div>
+					
+					<div class="col-xs-12 col-sm-6 col-md-3">
+						<section class="widget widget-text">
+							<h5 class="widget-title">营业时间</h5>
+							<div class="widget-content">
+								<p>周一 - 周五 :-------------------------8:00 -- 22:00</p>
+								<p>周六 - 周日 :-------------------------9:00 -- 24:00</p>
+								<br/>
+								<p>全年365天营业，节假日不休息，韩都衣舍期待您的光临！</p>
+							</div>
+						</section>
+					</div>
+					
+					<div class="space40 visible-sm clearfix"></div>
+					
+					<div class="col-xs-12 col-sm-6 col-md-2">
+						<section class="widget widget-menu">
+							<h5 class="widget-title">友情链接</h5>
+							<div class="widget-content">
+								<ul class="menu iconed-menu unstyled">
+									<foreach name="foot.links" item="v">
+										<li><a href="<{$v.url}>"><i class="iconfont-circle-blank menu-icon"></i><{$v.lname}></a></li>
+									</foreach>
+								</ul>
+							</div>
+						</section>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<!-- // FIRST ROW 第一行 -->
+		
+	</div>
+	<!-- // WIDGET AREA 小部件区域 -->
+	
+	<div class="footer-sub">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+				<!-- 此处预留,项目审核前屏蔽	SC -->
+<!-- 					<div class="footer-links center-xs clearfix">
+						<ul class="unstyled">
+							<li><a href="./Index/Tpl/Index/#">统计代码</a></li>
+							<li><a href="./Index/Tpl/Index/#">常见问题</a></li>
+							<li><a href="./Index/Tpl/Index/#">加入我们</a></li>
+						</ul>
+					</div>
+					<div class="space10"></div> -->
+					<div class="copyright center-xs">
+						<p>© 2013-2014 四重奏项目组 All rights reserved.</p>
+					</div>
+				</div>
+				
+				<div class="space40 visible-xs"></div>
+				
+				<div class="col-xs-12 col-sm-6">
+					<div class="pull-right">
+							<span class="uppercase">可选付款类型&emsp;</span>
+							<a href="./Index/Tpl/Index/#"><img src="__PUBLIC__/index/img/visacard.png" alt="" width="40" /></a>
+							<a href="./Index/Tpl/Index/#"><img src="__PUBLIC__/index/img/mastercard.png" alt="" width="40" /></a>
+							<a href="./Index/Tpl/Index/#"><img src="__PUBLIC__/index/img/paypal.png" alt="" width="40" /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</footer>
+<!-- // SITE FOOTER 站点尾部 -->

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<head>
+	<title>订单详情</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<!-- Bootstrap不支持IE的兼容模式，此处使IE浏览器运行最新的渲染模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 响应式布局开启视窗控制 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- 页面信息 -->
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="author" content="四重奏项目组/SC">
+	
+	<!-- bootstrap css 文件引入 -->
+	<link rel="stylesheet" href="__PUBLIC__/index/css/bootstrap.css">
+	<!-- // bootstrap css 文件引入 -->
+
+	<!-- 一般 css 文件引入 -->
+	<link rel="stylesheet" href="__PUBLIC__/index/css/minified.css">
+	<link rel="stylesheet" href="__PUBLIC__/index/css/innerpage.css">	
+	<!-- // 一般 css 文件引入 -->
+
+	<!--[if IE 8]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/selectivizr-min.js"></script>
+	<![endif]-->
+	<!--
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	-->
+	<!-- 挂载 jquery.min.js (上线采用)到对象 window 下，若不成功直接加载 -->
+	<script>window.jQuery || document.write('<script src="__PUBLIC__/index/js/jquery.min.js"><\/script>');</script>
+	<!-- // 挂载 jquery.min.js (上线采用)到对象 window 下，若不成功直接加载 -->
+	
+	<script src="__PUBLIC__/index/js/modernizr.min.js"></script>
+	
+	<!-- 挂载bootstrap js 文件 -->
+	<script src="__PUBLIC__/index/js/bootstrap.js"></script>
+	<!-- // 挂载 bootstrap js 文件 -->
+
+	<!-- 响应式 css 文件 -->
+	<link rel="stylesheet" href="__PUBLIC__/index/css/responsive.css">
+	<!-- // 响应式 css 文件 -->
+	<style type="text/css">
+		/* 定义图片 选择器，使宽高固定 */
+		.img60px {
+			width: 60px;
+			height: 60px;
+		}
+
+		/* 定义固定高度div */
+		.h11px {
+			height: 11px;
+			width: 100%;
+			}
+		.h20px {
+			height: 20px;
+			width: 100%;
+			}
+		.h30px {
+				height: 30px;
+		}
+		/* 定义line-height为60px */
+		.lineh60px{
+			line-height: 60px;	
+		}
+		/* 定义灰色背景色 */
+		.back-grey {
+				background: #F2F2F2;
+			}
+		/* 格式化所有padding和marign */
+		.nopm {
+				margin: 0;
+				padding: 0
+			}
+		.nop {
+			padding: 0;
+		}
+		.nop-l{
+			padding-left:0;
+			}
+		.nom {
+			margin: 0;
+		}
+		/* 格式化表格border */
+		.noborder {
+			border: 0;
+		}
+		/* 重定义clearfix使具有高度 */
+		.clearfix{
+				height: 12px;
+			}
+		/* 重定义th标签 */
+		th {
+  			border-bottom:0;
+    		vertical-align: bottom;
+			font-size: 12px;
+		}
+		
+	</style>
+</head>
+<body>
+	<include file="./Index/Tpl/index/header.html"/>
+	<div class="breadcrumb-container">
+		<div class="container">
+			<div class="relative" style="padding-top:20px;padding-bottom:20px;">
+				<ul class="bc push-up unstyled clearfix">
+					<li><a href="__APP__">首页</a></li>
+					<li><a href="__APP__/Personal/center">个人中心</a></li>
+					<li class="active">订单详情</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="h30px"></div>
+	<main id="main-content"role="main">
+	<div class="container">
+		<div class="col-md-offset-1 col-md-10">
+			<div class="row">
+				<div class="col-xs-3">
+					<button type="button" class="btn btn-error btn-block">拍下宝贝</button>
+				</div>
+				<div class="col-xs-3 nop-l">
+					<button type="button" class="btn btn-error btn-block">买家支付</button>
+				</div>
+				<div class="col-xs-3 nop-l">
+					<button type="button" class="btn btn-success btn-block">卖家发货</button>
+				</div>
+				<div class="col-xs-3 nop-l">
+					<button type="button" class="btn btn-error btn-block">确认收货</button>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="row">
+				<div class="col-xs-3 text-center">
+					<p class="text-primary">2013-11-11 10:10:45</p>
+				</div>
+				<div class="col-xs-3 text-center">
+					<p class="text-primary">2013-11-11 10:10:45</p>
+				</div>
+				<div class="col-xs-3 text-center">
+					<p class="text-primary">2013-11-11 10:10:45</p>
+				</div>
+				<div class="col-xs-3 text-center">
+					<p class="text-warning"></p>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="h20px"></div>
+			<div class="breadcrumb-container" style="padding-left: 5%;">
+				<p class="text-bold">订单状态：
+					<span class="text-primary">卖家已发货</span>
+				</p>
+				<div class="h11px"></div>
+				<p>1.其他备注信息如果没有收到货，或收到货后出现问题，您可以联系卖家协商解决。</p>
+				<p>2.如果卖家没有履行应尽的承诺，您可以"投诉维权"。</p>
+				<p>3.当前订单状态： 卖家已发货，请查看页面下方物流信息了解宝贝寄送情况</p>
+				<p>4.如果您已收到货，且对商品满意，您可以 确认收货 打款给卖家</p>
+				<p>5.如果还未收到货，请注意自动打款时间，您可以 延长收货时间 或 申请退款 查看退款流程和规则</p>
+			</div>
+			<div class="clearfix"></div>
+			<div class="h20px"></div>
+			<div>
+				<ul class="nav nav-tabs">
+					<li class="active"><a href="#tab-1" data-toggle="tab" style="margin-left: 100px; padding-bottom: 10px;">订单信息</a></li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane fade in active" id="tab-1">
+						<table class="table">
+								<thead>
+									<tr>
+										<td style="width:100px;">
+											<p class="text-bold text-center">收货地址：</p><br/>
+											<p class="text-bold text-center">买家留言：</p>
+										</td>
+										<td>
+											<p class="text-left">中国 广西自治区 南宁市电子科技广场 2楼B213</p><br/>
+											<p class="text-left">请给我发申通快递</p>
+										</td>
+									</tr>
+								</thead>
+						</table>
+						<table class="table">
+							<tbody>
+								<tr>
+									<td style="padding-left:17px;">
+										<p class="text-bold text-left">卖家信息：</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table">
+							<thead>
+								<tr>
+									<td style="width:100px;"></td>
+									<td><p>所在城市：</p></td>
+									<td class="text-left"><p>北京</p></td>
+									<td><p>电话：</p></td>
+									<td><p>13338383838</p></td>
+									<td><p>邮箱：</p></td>
+									<td><p>gegnxin@163.com</p></td>
+								</tr>
+							</thead>
+						</table>
+						<table class="table">
+							<tbody>
+								<tr>
+									<td style="padding-left:17px;">
+										<p class="text-bold text-left">订单信息：</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table">
+							<thead>
+								<tr>
+									<td style="width:100px;"></td>
+									<td>
+										<p>订单编号：</p><br/>
+										<p>付款时间：</p>
+									</td>
+									<td>
+										<p>12131213132232</p><br/>
+										<p>2013-11-23 15:56:47</p>
+									</td>
+									<td>
+										<p>支付交易号：</p><br/>
+										<p>发货时间：</p>
+									</td>
+									<td>
+										<p>79884654546546546</p><br/>
+										<p>2013-11-23 15:56:51</p>
+									</td>
+									<td>
+										<p>订单时间：</p><br/>
+										<p>确认时间：</p>
+									</td>
+									<td>
+										<p>2013-11-23 15:55:45</p><br/>
+										<p>2013-11-23 15:55:45</p>
+									</td>
+								</tr>
+							</thead>
+						</table>
+					<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th class="text-center">宝贝</th>
+									<th class="text-center">状态</th>
+									<th class="text-center">单价(元)</th>
+									<th class="text-center">数量</th>
+									<th class="text-center">优惠</th>
+									<th class="text-center">商品总价(元)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td style="padding-left:20px">
+										<img class="pull-left img60px" src="./img/logo.png">
+										<span class="pull-left">
+											fsdfsdfsdfff<br/>
+											fffffffffffterrrrrrrr<br/>
+											rrrrrrrrrrrr<br/>
+											rrrrrrrrrrrrrrrr<br/>
+										</span>										
+									</td>
+									<td class="text-center">
+										<p class="lineh60px">卖家已发货</p>
+									</td>
+									<td class="text-center">
+										<p class="lineh60px">120.00</p>
+									</td>
+									<td class="text-center">	
+										<p class="lineh60px">3</p>
+									</td>
+									<td class="text-center">
+										<p class="lineh60px">市场价-售价</p>
+									</td>
+									<td class="text-center">
+										<p class="lineh60px">360.00</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="table">
+							<thead>
+								<tr >
+									<td class="text-bold text-right" style="font-size:14px">
+										实付款：
+										<span style="font-weight:700;color:#FF5500;font-size:16px;">
+											100.00
+										</span>
+										&nbsp;元
+									</td>
+								</tr>
+							</thead>
+						</table>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</main>
+	<div class="clearfix"></div>
+	<div class="h30px"></div>
+	<include file="./Index/Tpl/index/footer.html" />
+</body>
+</html>

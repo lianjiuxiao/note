@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<head>
+	<title>商品结算</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<!-- Bootstrap不支持IE的兼容模式，此处使IE浏览器运行最新的渲染模式 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 响应式布局开启视窗控制 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 页面信息 -->
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="author" content="四重奏项目组/SC">
+	
+
+	<!-- 网站个性图标 -->
+	<link rel="icon" href="__PUBLIC__/index/img/favicon/favicon.html" type="image/x-icon" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="__PUBLIC__/index/img/favicon/apple-touch-icon-144x144-precomposed.html">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="__PUBLIC__/index/img/favicon/apple-touch-icon-72x72-precomposed.html">
+	<link rel="apple-touch-icon-precomposed" href="__PUBLIC__/index/img/favicon/apple-touch-icon-precomposed.html">
+	<!-- // 网站个性图标 -->
+	
+
+	<!-- GENERAL CSS FILES -->
+	<link rel="stylesheet" href="__PUBLIC__/index/css/minified.css">
+	<!-- // GENERAL CSS FILES -->
+	
+	<!--[if IE 8]>
+		<script src="js/respond.min.js"></script>
+		<script src="js/selectivizr-min.js"></script>
+	<![endif]-->
+
+	<script>window.jQuery || document.write('<script src="__PUBLIC__/index/js/jquery.min.js"><\/script>');</script>
+	<script src="__PUBLIC__/index/js/modernizr.min.js"></script>	
+	<!-- PARTICULAR PAGES CSS FILES -->
+	<link rel="stylesheet" href="__PUBLIC__/index/css/innerpage.css">
+	<!-- // PARTICULAR PAGES CSS FILES -->
+	<link rel="stylesheet" href="__PUBLIC__/index/css/responsive.css">
+</head>
+<body>
+			
+	<!-- PAGE WRAPPER -->
+<div id="page-wrapper">
+	<!-- 站点头部 -->
+	<include file="./Index/Tpl/Index/header.html" />
+	
+		<!-- BREADCRUMB -->
+		<div class="breadcrumb-container">
+			<div class="container">
+				<div class="relative">
+					<ul class="bc unstyled clearfix">
+						<li><a href="#">首页</a></li>
+						<li class="active">结算中心</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- // BREADCRUMB -->
+		
+		<!-- SITE MAIN CONTENT -->
+		<main id="main-content" role="main">
+		
+			<div class="container">
+				<div class="row">
+					
+					<div class="m-t-b clearfix">
+						<!-- SIDEBAR -->
+						<aside class="col-xs-12 col-sm-4 col-md-3">
+							<section class="side-section">
+								<h3 class="uppercase text-bold"><span class="text-xs">站内导航</span></h3>
+								
+								<ul class="nav nav-tabs nav-stacked">
+									<li><a href="index-3.html">店铺首页</a></li>															
+									<li><a href="about-us.html">关于店铺</a></li>															
+									<li><a href="products-2.html">近期活动</a></li>															
+									<li><a href="product-2.html">商品列表</a></li>															
+									<li><a href="contact-us-2.html">联系我们</a></li>															
+								</ul>
+							</section>
+								
+							<!-- PROMO -->
+							<div class="promo inverse-background" style="background: url('images/demo/Barn-Dress-Girl_t.jpg') no-repeat; background-size: auto 100%;">
+								<div class="inner text-center np">
+									<div class="ribbon">
+										<h6 class="nmb">New Arrivals</h6>
+										<h5 class="text-semibold uppercase nmb">Leather Fashion</h5>
+										<div class="space10"></div>
+										<a href="products.html" class="with-icon prepend-icon"><i class="iconfont-caret-right"></i><span> Shop Now</span></a>
+									</div>
+								</div>
+							</div>
+							<!-- // PROMO -->
+						</aside>
+						<!-- // SIDEBAR -->
+						
+						<section class="col-xs-12 col-sm-8 col-md-9">
+							<div class="panel-group checkout" id="checkout-collapse">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#checkout-collapse" href="#checkout-collapse1">
+												<span class="step">01</span>
+												成功提交订单
+											</a>
+										</h4>
+
+									</div>
+									<div id="checkout-collapse1" class="panel-collapse collapse in">
+										<div class="panel-body">
+											<div class="row">
+												<table border="1" width="600">
+										<tr colspan="2">订单信息</tr>
+										<tr>
+											<th>订单编号:</th><td><{$odata.ordernum}></td>
+										</tr>
+										<tr>
+											<th>订单金额:</th><td><{$odata.realprice}></td>
+										</tr>
+										<tr>
+											<th>支付方式:</th><td><{$odata.payname}></td>
+										</tr>
+										<tr>
+											<th>配送方式:</th><td><{$odata.diliveryname}></td>
+										</tr>
+										<tr>
+										<th>
+											<form action="__PUBLIC__/chinabank/Send.php" method="post">
+												<input type="hidden" name="v_oid" value="<{$odata.ordernum}>">
+												<input type="hidden" name="v_amount" value="<{$odata.totalprice}>">
+												<input type="submit" class="btn btn-primary" value="立即支付"/>
+											</form>
+										</th>
+										<td></td>
+										</tr>
+										
+										</table>
+
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- <div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+											<a data-toggle="collapse" data-parent="#checkout-collapse" href="#checkout-collapse2">
+												<span class="step">02</span>
+												查看订单信息
+											</a>
+										</h4>
+									</div>
+									<div id="checkout-collapse2" class="panel-collapse collapse">
+										<div class="panel-body">
+											<div class="row">
+												<div class="col-xs-12 col-sm-12 col-md-6">
+													区域一
+												</div>
+												<div class="col-xs-12 col-sm-12 col-md-6">
+													区域二<img src='__URL__/verify/' />
+												</div>
+											</div>
+										</div>
+									</div>
+								</div> -->
+
+							</div>
+						</section>
+						
+					</div>
+				
+				</div>
+			</div>
+		
+		</main>
+		<!-- // SITE MAIN CONTENT -->
+
+		<!-- 站点页脚 -->
+		<include file="./Index/Tpl/Index/footer.html" />
+
+</div>
+<!-- // PAGE WRAPPER -->
+
+<!-- Essential Javascripts -->
+<script src="__PUBLIC__/index/js/minified.js"></script>
+<!-- // Essential Javascripts -->
+
+<!-- Particular Page Javascripts -->
+<script src="__PUBLIC__/index/js/products.js"></script>
+<!-- // Particular Page Javascripts -->
+</body>
+</html>
