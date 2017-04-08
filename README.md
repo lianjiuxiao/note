@@ -1,12 +1,3 @@
-#Angular         Angular知识点
-#Api             提供APi
-#CI  	         CI知识点
-#css  	         css知识点
-#html  	         html知识点
-#Jquery          Jquery知识点
-#js              js知识点
-#ThinkPHP        ThinkPHP知识点
-
 <h2>文件结构说明</h2>
 <ul>
 <li><h4>服务型公共文件</h4></li>
@@ -25,9 +16,11 @@
 </ul>
 
 <ul>
+<li><h4>服务器方面</h4></li>
 <li><a href="ThinkPHP/">ThinkPHP</a>----ThinkPHP知识点</li>
 </ul>
 
 <ul>
+<li><h4>H5 ES6方面</h4></li>
 <li><a href="Vue/">Vue</a>----Vue知识点</li>
 </ul>
