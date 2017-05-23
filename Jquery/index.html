@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>技术分类</title>
+    <link rel="stylesheet" type="text/css" href="../Public/css/fonts.css.css">
+    <link rel="stylesheet" type="text/css" href="../Public/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../Public/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../Public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../Public/css/important.css">
+</head>
+
+<body>
+<div class="main">
+    <h1 class="title center">jquery知识点</h1>
+    <div class="cl cl1">
+        <h3 class="cl-title">jquery 插件使用</h3>
+        <p class="notice">jQuery提供了两个用于扩展Jquery功能的方法，JQuery.fn.extend()和JQuery.extend()，JQuery.fn.extend()用于对jQuery对象方法的封装，JQuery.extend()用于对全局函数和选择器的封装。即通过$.extend()来扩展jQuery，通过$.fn 向jQuery添加新的方法</p>
+        <div class="ccl ccl0">
+            <p>js基本定义：插件闭包，防止插件"污染"</p>
+                <pre>
+               ;(function(){
+
+                })()
+            </pre>
+        </div>
+        <div class="ccl ccl1">
+            <p>jquery基本定义：</p>
+                <pre>
+                ;(function($){
+                //这里写插件代码
+                })(jQuery);
+            </pre>
+        </div>
+        <div class="ccl ccl2">
+            <p>类扩展的插件</p>
+            <p> 1.添加全局函数</p>
+                <pre>
+                $.ltrim = function( str ) {
+                return str.replace( /^\s+/, "" );
+                };
+                </pre>
+            <p>调用方式</p>
+                <pre>
+                var  str="  去除左空格 ";
+                console.log("去除前:"+str.length+"去除后:"+$.ltrim(str).length);
+                </pre>
+
+            <p> 2.添加多个全局函数</p>
+                <pre>
+                $.ltrim = function( str ) {
+                return str.replace( /^\s+/, "" );
+                };
+                $.rtrim = function( str ) {
+                return str.replace( /\s+$/, "" );
+                };
+                </pre>
+            <p>2的优化：上面那种如果你写的全局函数比较少的情况下使用挺好，如果多的话建议使用 使用$.extend(object)</p>
+                <pre>
+                    $.extend({
+                    ltrim:function( str ) {
+                    return str.replace( /^\s+/, "" );
+                    },
+                    rtrim:function( str ) {
+                    return str.replace( /\s+$/, "" );
+                    }
+                    });
+                </pre>
+
+
+            <p class="notice">再优化：3.独立的命名空间 ：虽然在jQuery命名空间中，我们禁止使用了大量的javaScript函数名和变量名。但是仍然不可避免某些函数或变量名将于其他jQuery插件冲突，因此我们习惯将一些方法封装到另一个自定义的命名空间。</p>
+                <pre>
+                    $.myPlugin={
+                    ltrim:function( str ) {
+                    return str.replace( /^\s+/, "" );
+                    },
+                    rtrim:function( str ) {
+                    return str.replace( /\s+$/, "" );
+                    }
+                    };
+                </pre>
+            <p>使用独立的插件名，可以避免命名空间内函数的冲突，调用方式:</p>
+                <pre>
+                    var  str="  去除左空格 ";
+                    console.log("调用前:"+str.length+"调用后:"+$.myPlugin.ltrim(str).length);
+                </pre>
+        </div>
+
+        <div class="ccl ccl3">
+            <p>对象扩展的插件</p>
+            <p> 1.添加一个对象扩展方法</p>
+                <pre>
+                  $.fn.changeColor= function() {
+                  this.css( "color", "red" );
+                  };
+                    $.fn.changeFont= function() {
+                    this.css( "font-size", "24px" );
+                    };
+                </pre>
+            <p>调用方式</p>
+                <pre>
+                $(function () {
+                $("a").showColor();
+                $("div").changeFont();
+                });
+                </pre>
+
+            <p> 2.添加多个对象扩展方法</p>
+                <pre>
+                ;(function($){
+                $.fn.changeColor= function() {
+                this.css( "color", "red" );
+                };
+                $.fn.changeFont=function() {
+                this.css( "font-size", "24px" );
+                };
+                })(jQuery);
+                </pre>
+            <p>2的优化：使用$.fn.extend(object)</p>
+                <pre>
+                   $.fn.extend({
+                   changeColor:function() {
+                   this.css( "color", "red" );
+                   },
+                   changeFont:function() {
+                   this.css( "font-size", "24px" );
+                   }
+                   });
+                </pre>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
