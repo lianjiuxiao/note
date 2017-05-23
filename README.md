@@ -25,5 +25,8 @@
 <li><a href="Express/">Vue</a>----Express知识点与demo</li>
 </ul>
 <h2>使用说明</h2>
-#务必具有  Api  Public文件
-#Vue Express需要node环境  接口由 Api（thinkphp）提供
+
+<ul>
+<li>#务必具有  Api  Public文件</li>
+<li>#Vue Express需要node环境  接口由 Api（thinkphp）提供</li>
+</ul>
