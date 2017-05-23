@@ -94,5 +94,38 @@ class IndexAction extends Action {
     function readme() {
     	$this->display();
     }
+
+    function getCartsGoods(){
+    	/**获取首页掌柜 推荐的商品*/
+    	/*
+    	http://api.tp.com/api.php/Index/getCartsGoods
+    	*/
+    	$goods = M("goods");
+		$tdata = $goods->where("tuijian=1 AND issell=1")->select();
+		$php_json = json_encode($tdata,true);
+		echo $php_json;
+    }
+
+    function postParams(){
+    	/**获取首页掌柜 推荐的商品*/
+    	/*
+    	http://api.tp.com/api.php/Index/getCartsGoods
+    	*/
+    	//$getParams=$_POST;
+    	$getParams=$_REQUEST; //不分post和get
+		echo json_encode($getParams,true);
+    }
+
+
+    function getParams(){
+    	/**获取首页掌柜 推荐的商品*/
+    	/*
+    	http://api.tp.com/api.php/Index/getCartsGoods
+    	*/
+    	//$getParams=$_get;
+    	$getParams=$_REQUEST; //不分post和get
+		echo json_encode($getParams,true);
+    }
+
 }
 ?>
