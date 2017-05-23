@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>技术分类</title>
+    <link rel="stylesheet" type="text/css" href="../Public/css/fonts.css.css">
+    <link rel="stylesheet" type="text/css" href="../Public/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../Public/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../Public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../Public/css/important.css">
+</head>
+
+<body>
+<div class="main">
+    <h1 class="title center">mysql知识点</h1>
+    <div class="cl cl1">
+        <h3 class="cl-title">mysql 基本查询语法</h3>
+        <p>语法形式：select [all | distinct] 字段或表达式列表 [from子句] [where子句] [group by子句] [having子句] [order by子句] [limit子句];</p>
+        <p>基本语义与解释：select语句表示从某个或默写表中查询（取得）活干条数据。上述语法形式中。所有中括号中的部分都是可以省略的，但是如果出现，则他每年的顺序必须按上面给出的顺序书写。而且，逻辑上，后一个子句都是在前一个子句多获得的结果的基础上再记性其设定的功能操作。</p>
+        <ul class="ccl">
+            <li>
+                [all | distinct] 表示是否返回取得的数据中的重复行。all表示会返回重复行，distinct表示不返回重复行，意思是，重复的若干数据就只返回一行，默认就是all，也就是最常用的，因为数据通常都不会有重复行。
+            </li>
+            <li>
+                <h4 class="ccl-title">where子句说明 like说明</h4>
+                <img src="images/01.png" alt="">
+                <img src="images/02.png" alt="">
+            </li>
+            <li>
+                <h4 class="ccl-title">group by子句说明</h4>
+                <p class="notice">分组后，通常只有可用的“组信息”，常用的有“组”的数量，平均值，最大最小值，总和值</p>
+                <img src="images/03.png" alt="">
+                <img src="images/04.png" alt="">
+            </li>
+        </ul>
+        <div class="ccl">
+            <h3 class="ccl-title">select基本查询语法 总结</h3>
+            <img src="images/05.png" alt="">
+        </div>
+        <div class="ccl">
+            <h3 class="ccl-title">select基本查询语法 案例</h3>
+            <img src="images/06.png" alt="">
+            <img src="images/07.png" alt="">
+        </div>
+    </div>
+    <div class="cl cl2">
+        <h3 class="cl-title">mysql 连接查询语法</h3>
+        <img src="images/08.png" alt="">
+    </div>
+
+    <div class="cl cl3">
+        <h3 class="cl-title">mysql 子查询语法</h3>
+        <img src="images/09.png" alt="">
+    </div>
+
+    <div class="cl cl4">
+        <h3 class="cl-title">mysql 联合查询语法</h3>
+        <img src="images/10.png" alt="">
+
+        <div class="ccl">
+            <h3 class="ccl-title">select联合查询案例</h3>
+            <p class="notice">注释:在mysql中，将连接查询Join翻译成联合查询，而联合查询union，没有明确翻译</p>
+            <p class="notice">注释：子查询和连接查询都能实现，连接查询普遍效率较高</p>
+            <img src="images/12.png" alt="">
+            <img src="images/13.png" alt="">
+            <img src="images/14.png" alt="">
+            <img src="images/15.png" alt="">
+        </div>
+        <div class="ccl">
+            <h3 class="ccl-title">select联合查询 3表查询案例（多表查询）</h3>
+            <img src="images/16.png" alt=""><br/>
+            <img src="images/17.png" alt=""><br/>
+            <img src="images/18.png" alt=""><br/>
+            <img src="images/19.png" alt=""><br/>
+            <img src="images/20.png" alt=""><br/>
+            <img src="images/21.png" alt=""><br/>
+            <img src="images/22.png" alt=""><br/>
+            <p class="notice">注释：最后一个案例，分组为了严格，加上name。可以不要</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
