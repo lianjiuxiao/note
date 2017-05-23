@@ -21,5 +21,9 @@
 
 <ul>
 <li><h4>H5 ES6方面</h4></li>
-<li><a href="Vue/">Vue</a>----Vue知识点</li>
+<li><a href="Vue/">Vue</a>----Vue知识点与demo</li>
+<li><a href="Express/">Vue</a>----Express知识点与demo</li>
 </ul>
+<h2>使用说明</h2>
+#务必具有  Api  Public文件
+#Vue Express需要node环境  接口由 Api（thinkphp）提供
