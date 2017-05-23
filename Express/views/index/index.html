@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+</head>
+<body>
+	<p>这是第一个页面</p>
+</body>
+
+<script>
+	var params={}
+	params.tuijian=1;
+	params.issell=1;
+	$.ajax({
+		url: "/api/postParams.php?bbb=1&aaa=2",
+		type: "post",
+		async: true,
+		data:params,
+		dataType: "json",
+		success: function (data) {
+			console.log("11111111111");
+		},
+		error:function (data) {
+			console.log("2222222222");
+		}
+	});
+
+	$.ajax({
+		url: "/api/getCartsGoods.php",
+		type: "post",
+		async: true,
+		dataType: "json",
+		success: function (data) {
+			console.log("11111111111");
+		},
+		error:function (data) {
+			console.log("2222222222");
+		}
+	});
+
+	$.ajax({
+		url: "/api/getParams.php?aaa=1",
+		type: "get",
+		async: true,
+		dataType: "json",
+		success: function (data) {
+			console.log("11111111111");
+		},
+		error:function (data) {
+			console.log("2222222222");
+		}
+	});
+
+
+
+</script>
+</html>

@@ -1,0 +1,23 @@
+const express = require('express');
+const ejs  = require('ejs');
+const routers= require('./routes/routes.js');
+var proxy = require('./routes/proxy.js');
+
+const app = express();
+
+/*设置模板引擎*/
+app.engine('html', ejs.__express);
+app.set('view engine', 'html');
+
+/*设置代理*/
+proxy(app);
+
+/*设置路由*/
+routers(app);
+
+/*启动服务*/
+var server = app.listen(3000, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+  console.log('Example app listening at http://%s:%s', host, port);
+});
