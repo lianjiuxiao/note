@@ -18,6 +18,7 @@
 <li><h4>服务器方面</h4></li>
 <li><a href="PHP/">PHP</a>----PHP知识点</li>
 <li><a href="ThinkPHP/">ThinkPHP</a>----ThinkPHP知识点</li>
+<li><a href="Mysql/">Mysql</a>----Mysql知识点</li>
 </ul>
 
 <ul>
