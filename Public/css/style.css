@@ -1,0 +1,78 @@
+.main{
+    width: 1160px;
+    margin: auto;
+    padding-top:20px;
+}
+.title{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: red;
+}
+.cl{
+    border: 1px solid #ccc;
+    margin: 20px 0px;
+    padding: 10px 20px;
+}
+.ccl{
+    border: 1px solid #eee;
+    margin: 10px 0px;
+    padding: 10px 10px;
+}
+.cl .cl-title{
+    font-size: 18px;
+    color: blue;
+    text-align: left;
+}
+.cl .ccl-title{
+    font-size: 16px;
+    color: pink;
+    text-align: left;
+    margin: 10px 0px;
+}
+
+.cl p{
+    margin-top: 10px;
+}
+.cl  h3 a{
+    display: inline-block;
+    padding-left: 6px;
+}
+pre{
+    border: 1px dashed #cecece;
+    padding: 10px 0px;
+}
+.cont{
+    border: 1px dashed #cecece;
+    padding: 10px;
+}
+.zs{
+    color: blue;
+    line-height: 18px;
+}
+.zs span{
+    color: red;
+    margin-right: 10px;
+}
+.btn{
+    display: inline-block;
+    padding: 0px 16px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    background: #cecece;
+    border-radius: 4px;
+}
+.notice{
+    color: red;
+}
+
+
+#demo{
+    width: 0;
+    height: 0;
+    border-width: 20px;
+    border-style: solid;
+    border-color: transparent transparent red transparent;
+}
