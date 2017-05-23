@@ -29,4 +29,5 @@
 <ul>
 <li>#务必具有  Api  Public文件</li>
 <li>#Vue Express需要node环境  接口由 Api（thinkphp）提供</li>
+<li>#各模块可详看各模块下的README文件</li>
 </ul>
