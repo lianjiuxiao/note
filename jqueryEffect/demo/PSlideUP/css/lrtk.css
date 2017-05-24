@@ -1,0 +1,9 @@
+/* 转载请保留版权信息：懒人图库 www.lanrentuku.com */
+*{ padding:0px; margin:0px;}
+img{ border:none;}
+ul,li{ list-style:none;}
+.box li{ width:190px; height:114px; margin-right:10px; float:left; overflow:hidden; position:relative;}
+.toll_img{ width:190px; height:114px;}
+.toll_info{ height:114px; background:#EEE; vertical-align:middle;display:table-cell;}
+.box li p{ padding:10px; font:normal 13px/24px '微软雅黑'; cursor:pointer;}
+.box li a{ color:#666; text-decoration:none; position:absolute; top:0; left:0;}
