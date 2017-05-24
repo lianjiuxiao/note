@@ -1,0 +1,76 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>拼音查询</title>
+
+<link href="selectbox.css" type="text/css" rel="stylesheet"/>
+
+<script src="jquery.min.1.11.2.js"></script>
+
+<script src="changtopy.js"></script>
+
+<script src="getpyszm.js"></script>
+
+<script src="jquery.singleselect.js"></script>
+
+    <select id="test">
+        <option value="1">龙隆阳阳菲菲</option>
+
+        <option value="2">王分</option>
+
+        <option value="3">李冯家湾</option>
+
+        <option value="4">马废物</option>
+
+        <option value="5">赵废物</option>
+
+        <option value="6">马个</option>
+
+        <option value="7">赵访问</option>
+
+        <option value="8">许废物</option>
+
+        <option value="9">赵无法</option>
+
+        <option value="10">靖方</option>
+
+        <option value="11">赵易图</option>
+
+    </select>
+    <div style="width: 200px;height: 50px;background: #555;" class="btn">查看singleSelect的值</div>
+</body>
+<script>
+
+    $(function(){
+
+        $("#test").singleSelect({width:"200px"});
+    });
+
+    function selectchange(){
+
+        alert($("#test").getsingleSelectValue());
+
+    }
+
+    function getSelectVal(){
+
+        alert($("#test").getsingleSelectValue());
+
+        $("#test").singleSelectInputSetText("小李");
+
+    }
+        $('.btn').click(function(){
+        alert($("#test").getsingleSelectValue());
+    });
+
+
+</script>
+
+</html>
+

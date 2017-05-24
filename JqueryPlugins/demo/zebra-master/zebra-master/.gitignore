@@ -1,0 +1,4 @@
+tests/io/*.pyc
+node_modules
+*.zip
+*.log

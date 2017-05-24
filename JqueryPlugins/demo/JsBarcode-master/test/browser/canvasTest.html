@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Test minified version</title>
+	<script src="jquery.1.11.2.js"></script>
+	<script src="../../dist/JsBarcode.all.js"></script>
+
+	<script src="tests.js"></script>
+	<script src="canvasTest.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="test.css">
+</head>
+<body>
+<div class="barcodebox">
+<img  class="barcode" data-code="1701191002741" src="" alt="">
+</div>
+<!-- <img  class="barcode" data-code="1701191002742" src="" alt="">
+<img  class="barcode" data-code="1701191002743" src="" alt="">
+<img  class="barcode" data-code="1701191002744" src="" alt=""> -->
+	<script>
+		// doTests($('.barcodebox'));
+		 JsBarcode($('.barcode'), "1701191002741", {format: "EAN13", width: 2, fontSize: 16});
+	</script>
+</body>
+</html>

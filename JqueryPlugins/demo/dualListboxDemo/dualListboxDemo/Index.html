@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>静态数据Demo，和官方一样，默认使用Jquery2.0及以上版本</title>
+    <link href="scripts/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!--<link href="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css" rel="stylesheet">-->
+    <link href="scripts/duallistbox/bootstrap-duallistbox.min.css" rel="stylesheet" />
+    <script src="scripts/jquery/jquery-2.1.4.min.js"></script>
+    <script src="scripts/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>-->
+    <script src="scripts/duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            var demo2 = $('.demo1').bootstrapDualListbox({
+                nonSelectedListLabel: 'Non-selected',
+                selectedListLabel: 'Selected',
+                preserveSelectionOnMove: 'moved',
+                moveOnSelect: false,
+                nonSelectedFilter: 'ion ([7-9]|[1][0-2])'
+            });
+
+            $("#showValue").click(function () {
+                alert($('[name="duallistbox_demo1"]').val());
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="col-md-7">
+        <select multiple="multiple" size="10" name="duallistbox_demo1" class="demo1">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3" selected="selected">Option 3</option>
+            <option value="4">Option 4</option>
+            <option value="5">Option 5</option>
+            <option value="6" selected="selected">Option 6</option>
+            <option value="7">Option 7</option>
+            <option value="8">Option 8</option>
+            <option value="9">Option 9</option>
+            <option value="10">Option 10</option>
+        </select>
+        <br />
+        <input id="showValue" type="button" value="show selected data" />
+    </div>
+</body>
+</html>

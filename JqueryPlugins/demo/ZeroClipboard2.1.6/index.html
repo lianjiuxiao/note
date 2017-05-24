@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>2.16</title>
+</head>
+
+<body>
+    <div class="example">
+        <div class="demo-area clearfix" style="width:800px;">
+            <div class="left">
+                <h4><label for="fe_text">输入你要复制的内容</label></h4>
+                <div id="fe_text">Copy me!输入你要复制的内容</div>
+                <div class="mt">
+                    <button id="d_clip_button" class="button green" title="单击复制到剪贴板" data-clipboard-target="fe_text">复制到剪贴板</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="jquery-1.7.2.min.js"></script>
+    <script src="ZeroClipboard.js"></script>
+    <script>
+    $(document).ready(function() {
+        var clip = new ZeroClipboard($('#d_clip_button'));
+
+        clip.on('ready', function() {
+            debugstr('Flash 已经准备完成。');
+
+            this.on('aftercopy', function(event) {
+                debugstr('已经复制剪贴板：' + event.data['text/plain']);
+            });
+        });
+
+        clip.on('error', function(event) {
+            $('.demo-area').hide();
+            debugstr('error[name="' + event.name + '"]: ' + event.message);
+            ZeroClipboard.destroy();
+        });
+
+        // jquery stuff (optional)
+        function debugstr(text) {
+            $('#d_debug').append($('<p>').text(text));
+        }
+
+        $('#clear-test').on('click', function() {
+            $('#fe_text').val('Copy me!');
+            $('#testarea').val('');
+        });
+    });
+    </script>
+</body>
+
+</html>

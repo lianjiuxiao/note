@@ -1,0 +1,80 @@
+<div class="fanbox">
+    <h3>新增产品</h3>
+    <form id="add_form" action="do.php?action=add" method="post">
+        <table width="100%" cellpadding="0" cellspacing="0" class="post_table">
+            <tr>
+                <td width="30%" align="right">产品名称：</td>
+                <td><input type="text" class="input2" name="pro_title" maxlength="30" /></td>
+            </tr>
+            <tr>
+                <td align="right">编号：</td>
+                <td><input type="text" class="input2" name="pro_sn" maxlength="10" /></td>
+            </tr>
+            <tr>
+                <td align="right">主屏尺寸：</td>
+                <td>
+                <select name="size">
+                    <option value="3.2英寸 480x360像素">3.2英寸 480x360像素</option>
+                    <option value="3.5英寸 960x640像素 ">3.5英寸 960x640像素 </option>
+                    <option value="4英寸 854x480像素">4英寸 854x480像素</option>
+                    <option value="4.3英寸 800x480像素 ">4.3英寸 800x480像素 </option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">操作系统：</td>
+                <td>
+                <select name="os">
+                   <option value="iOS 5.0">iOS 5.0</option>
+                   <option value="Android OS 2.3">Android OS 2.3</option>
+                   <option value="Android OS 2.2">Android OS 2.2</option>
+                   <option value="Android OS 2.1">Android OS 2.1</option>
+                   <option value="Symbian S60V5">Symbian S60V5</option>
+                   <option value="Symbian S60V3">Symbian S60V3</option>
+                   <option value="BlackBerry OS">BlackBerry OS</option>
+                   <option value="Windows phone ">Windows phone </option>
+                   <option value="其他">其他</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">电池容量：</td>
+                <td><input type="text" class="input2" style="width:100px" name="charge" maxlength="30" /> mAh</td>
+            </tr>
+            <tr>
+                <td align="right">价格(￥)：</td>
+                <td><input type="text" class="input2" style="width:100px" name="price" id="price" maxlength="30" /> 元</td>
+            </tr>
+            <tr>
+                <td height="60">&nbsp;</td>
+                <td><input type="submit" class="btn" value="提交"/> <input type="button" class="btn" value="取消" onclick="$.fancybox.close();" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#add_form').ajaxForm({
+		beforeSubmit: validate,
+		success: function(msg){
+			if(msg==1){
+				$.fancybox.close();
+				$().message("成功添加");
+				$("#list").trigger("reloadGrid");
+			}else{
+				alert(msg);
+			}
+		}
+	}); 
+});
+function validate(formData, jqForm, options) {  
+    for (var i=0; i < formData.length; i++) { 
+        if (!formData[i].value) { 
+			$().message("请输入完整相关信息");
+            return false; 
+        } 
+    } 
+	$().message("正在提交...");
+}
+</script>

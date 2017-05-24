@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>动态数据Demo，结合实际项目，使用Jquery1.8</title>
+    <link href="scripts/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!--<link href="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css" rel="stylesheet">-->
+    <link href="scripts/duallistbox/bootstrap-duallistbox.min.css" rel="stylesheet" />
+    <script src="scripts/jquery/jquery-1.10.2.min.js"></script>
+    <script src="scripts/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>-->
+    <script src="scripts/duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            //初始化
+            initListBox('hangwei.cnblogs.com', 'demo2');
+
+            $("#showValue").click(function () {
+                alert($('[name="duallistbox_demo2"]').val());
+            });
+        });
+
+        /*初始化duallistbox*/
+        //queryParam1：参数
+        //selectClass：select元素class属性
+        //selectedDataStr：选中数据，多个以,隔开
+        function initListBox(queryParam1,selectClass, selectedDataStr) {
+            var paramData = {
+                'testParam1': queryParam1
+            }
+            $.ajax({
+                url: 'DataHandler.ashx',
+                type: 'get',
+                data: paramData,
+                async: true,
+                success: function (returnData) {
+                    var objs = $.parseJSON(returnData);
+                    $(objs).each(function () {
+                        var o = document.createElement("option");
+                        o.value = this['id'];
+                        o.text = this['name'];
+                        if ("undefined" != typeof (selectedDataStr) && selectedDataStr != "") {
+                            var selectedDataArray = selectedDataStr.split(',');
+                            $.each(selectedDataArray, function (i, val) {
+                                if (o.value == val) {
+                                    o.selected = 'selected';
+                                    return false;
+                                }
+                            });
+                        }
+                        $("." + selectClass + "")[0].options.add(o);
+                    });
+                    //渲染dualListbox
+                    $('.' + selectClass + '').bootstrapDualListbox({
+                        nonSelectedListLabel: 'Non-selected',
+                        selectedListLabel: 'Selected',
+                        preserveSelectionOnMove: 'moved',
+                        moveOnSelect: false//,
+                        //nonSelectedFilter: 'ion ([7-9]|[1][0-2])'
+                    });
+                },
+                error: function (e) {
+                    alert(e.msg);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="col-md-7">
+        <select multiple="multiple" size="10" name="duallistbox_demo2" class="demo2">
+        </select>
+        <br />
+        <input id="showValue" type="button" value="show selected data" />
+    </div>
+</body>
+</html>

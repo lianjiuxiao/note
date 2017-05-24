@@ -1,0 +1,41 @@
+jqzoom图片放大器代码，适合产品图片的展示，兼容主流浏览器，懒人图库推荐下载！
+
+使用方法：
+1、head区域引入
+<link rel="stylesheet" href="css/jqzoom.css" type="text/css">
+2、 引入js库
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jqzoom.pack.1.0.1.js" type="text/javascript"></script>
+3、调用jqzoom函数库
+<script type="text/javascript">
+$(function() {
+	var options =
+	{
+		zoomWidth: 250, //放大镜的宽度
+		zoomHeight: 250,//放大镜的高度
+		zoomType:'reverse'
+	};
+	
+	$(".jqzoom").jqzoom(options);
+});
+</script>
+
+配置参数：
+zoomType，默认值：’standard’，另一个值是’reverse’，是否将原图用半透明图层遮盖。
+zoomWidth，默认值：200，放大窗口的宽度。
+zoomHeight，默认值：200，放大窗口的高度。
+xOffset，默认值：10，放大窗口相对于原图的x轴偏移值，可以为负。
+yOffset，默认值：0，放大窗口相对于原图的y轴偏移值，可以为负。
+position，默认值：’right’，放大窗口的位置，值还可以是:’right’ ,’left’ ,’top’ ,’bottom’。
+lens，默认值：true，若为false，则不在原图上显示镜头。
+imageOpacity，默认值：0.2，当zoomType的值为’reverse’时，这个参数用于指定遮罩的透明度。
+title，默认值：true，在放大窗口中显示标题，值可以为a标记的title值，若无，则为原图的title值。
+showEffect，默认值：’show’，显示放大窗口时的效果，值可以为: ‘show’ ,’fadein’。
+hideEffect，默认值：’hide’，隐藏放大窗口时的效果: ‘hide’ ,’fadeout’。
+fadeinSpeed，默认值：’fast’，放大窗口的渐显速度(选项: ‘fast’,'slow’,'medium’)。
+fadeoutSpeed，默认值：’slow’，放大窗口的渐隐速度(选项: ‘fast’,'slow’,'medium’)。
+showPreload，默认值：true，是否显示加载提示Loading zoom(选项: ‘true’,'false’)。
+preloadText，默认值：’Loading zoom’，自定义加载提示文本。
+preloadPosition，默认值：’center’，加载提示的位置，值也可以为’bycss’，以通过css指定位置。
+
+*更多代码请访问：懒人图库 www.lanrentuku.com/js/

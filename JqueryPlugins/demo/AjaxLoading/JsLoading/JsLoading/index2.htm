@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ajax Loading Demo</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <!--原版压缩spin.js-->
+    <script type="text/javascript" src="js/spin.min.js" ></script>
+    <!--带图片的spin.js-->
+    <!--<script src="js/spin-image.js" type="text/javascript"></script>-->
+    <!--带进度条spin.js-->
+    <!--<script src="js/spin-progress.js" type="text/javascript"></script>-->
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">        
+        //opts 可从网站在线制作
+        var opts = {
+            //innerImage: {url: '../img/logo.png', width: 56, height: 56 }, //内部图片            
+            lines: 13, // 花瓣数目
+            length: 20, // 花瓣长度
+            width: 10, // 花瓣宽度
+            radius: 30, // 花瓣距中心半径
+            corners: 1, // 花瓣圆滑度 (0-1)
+            rotate: 0, // 花瓣旋转角度
+            direction: 1, // 花瓣旋转方向 1: 顺时针, -1: 逆时针
+            color: '#5882FA', // 花瓣颜色
+            speed: 1, // 花瓣旋转速度
+            trail: 60, // 花瓣旋转时的拖影(百分比)
+            shadow: false, // 花瓣是否显示阴影
+            hwaccel: false, //spinner 是否启用硬件加速及高速旋转            
+            className: 'spinner', // spinner css 样式名称
+            zIndex: 2e9, // spinner的z轴 (默认是2000000000)
+            top: 'auto', // spinner 相对父容器Top定位 单位 px
+            left: 'auto', // spinner 相对父容器Left定位 单位 px
+            position: 'relative', // element position
+            progress: true,      // show progress tracker
+            progressTop: 0,       // offset top for progress tracker
+            progressLeft: 0       // offset left for progress tracker
+        };
+
+        var spinner = new Spinner(opts);
+
+        $(document).ready(function () {
+            $("#btnRequest").bind("click", function () {
+                ajaxRequestData();
+            })
+        })
+        
+        function ajaxRequestData(){
+            $.ajax({
+                type: "POST",
+                timeout: 10000,
+                dataType: "text",
+                url: "http://www.baidu.com",
+                beforeSend: function () {
+                    //异步请求时spinner出现
+                    $("#firstDiv").text("");
+                    var target = $("#firstDiv").get(0);
+                    spinner.spin(target);
+                    //进度                   
+                    //spinner.setProgress(i, 20);
+                },
+                success: function (msg) {
+                    $("#firstDiv").text(msg);
+                    //关闭spinner  
+                    spinner.spin();
+                }//,
+                // error: function (e, jqxhr, settings, exception) {
+                //     $("#firstDiv").text("请求发生错误...");
+                //     //关闭spinner  
+                //     spinner.spin();
+                // }
+            })
+        }
+
+    </script>
+</head>
+<body>
+    <div id="firstDiv">
+    </div>
+    <div id="secondDiv">
+        <input id="btnRequest" type="button" value="请求数据" class="btnStyle" />
+    </div>
+    <div style=" text-align:center">
+      <a href="http://www.cnblogs.com/lxblog" target="_blank">http://www.cnblogs.com/lxblog</a>
+    </div>
+</body>
+</html>

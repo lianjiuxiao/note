@@ -1,0 +1,9 @@
+JS产品图片局部放大效果，鼠标移到产品图片上可局部放大，点击图片可浏览完整产品大图，鼠标移动到左侧箭头可上下滚动缩略图，兼容主流浏览器，懒人图库推荐下载！
+
+使用方法：
+1. head区域引用文件 mzp-packed.js，lrtk.css，magiczoomplus.css
+2. 在你的文件中加入<!-- 代码 开始 --><!-- 代码 结束 -->区域代码
+3. lrtk.js要在代码后面加载
+4. 如须修改放大后图片显示的大小，请修改magiczoomplus.css样式表里.MagicZoomBigImageCont img对应的宽高。
+
+*更多代码请访问：懒人图库 www.lanrentuku.com/js/

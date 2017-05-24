@@ -1,0 +1,27 @@
+{
+    "name"       : "zebra",
+    "version"    : "1.0.0",
+    "description": "![ScreenShot](/samples/images/header.jpg)",
+    "main": "gulpfile.js",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/barmalei/zebra.git"
+    },
+    "author": "",
+    "license": "Apache",
+    "bugs": {
+        "url": "https://github.com/barmalei/zebra/issues"
+    },
+    "homepage": "https://github.com/barmalei/zebra",
+    "devDependencies": {
+        "jshint"        : "latest",
+        "gulp"          : "latest",
+        "gulp-rename": "latest",
+        "gulp-uglify": "latest",
+        "gulp-concat": "latest",
+        "gulp-webserver": "latest",
+        "gulp-zip": "latest",
+        "gulp-jshint": "latest"
+    }
+}

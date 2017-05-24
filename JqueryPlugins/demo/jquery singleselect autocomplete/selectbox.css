@@ -1,0 +1,128 @@
+/* CSS Document */
+.multiselect-widget {
+	background: #000000;
+}
+
+.multiselect-input,.singleSelect-input {
+	BORDER-BOTTOM: #a2b3bd 1px solid;
+	BORDER-LEFT: #a2b3bd 1px solid;
+	LINE-HEIGHT: 20px;
+	BACKGROUND: url(images/textinput_bg.jpg) #ffffff repeat-x left top;
+	HEIGHT: 20px;
+	FONT-SIZE: 12px;
+	BORDER-TOP: #a2b3bd 1px solid;
+	BORDER-RIGHT: #a2b3bd 1px solid;
+	float: left;
+}
+
+.multiselect-input_hover,.singleSelect-input_hover {
+	BORDER-BOTTOM: #00ccff 1px solid;
+	BORDER-LEFT: #00ccff 1px solid;
+	LINE-HEIGHT: 20px;
+	BACKGROUND: url(images/textinput_bg.jpg) #ffffff repeat-x left top;
+	HEIGHT: 20px;
+	COLOR: #336699;
+	FONT-SIZE: 12px;
+	BORDER-TOP: #00ccff 1px solid;
+	BORDER-RIGHT: #00ccff 1px solid
+}
+
+.multiselect-input_click,.singleSelect-input_click { 
+	BORDER-BOTTOM: #fbd45c 1px solid;
+	BORDER-LEFT: #fbd45c 1px solid;
+	LINE-HEIGHT: 20px;
+	BACKGROUND: url(images/textinput_bg.jpg) #ffffff repeat-x left top;
+	HEIGHT: 20px;
+	COLOR: #336699;
+	FONT-SIZE: 12px;
+	BORDER-TOP: #fbd45c 1px solid;
+	BORDER-RIGHT: #fbd45c 1px solid
+}
+
+.multiselect-content {
+	display:none;
+	position: absolute;
+	z-index: 2000;
+	clear: left;
+	float: left;
+	padding: 0px;
+	margin: 0px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	font-size: 12px;
+	BORDER: #ADC2DF 1px solid;
+	BACKGROUND: #FFFFFF;
+	outline: medium none;
+	cursor: default;
+}
+
+.singleSelect-content {
+	display:none;
+	position: absolute;
+	z-index: 2000;
+	clear: left;
+	float: left;
+	padding: 0px;
+	margin: 0px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	font-size: 12px;
+	BORDER: #ADC2DF 1px solid;
+	BACKGROUND: #FFFFFF;
+	outline: medium none;
+	cursor: default;
+}
+.singleSelect-loader,.multiseSelect-loader {
+	display:none;
+    position: absolute;
+    z-index: 500;
+	font-size: 12px;
+    padding-left: 5px;
+    padding-top: 3px;
+    color:#FBA33C;
+    width: 100%;
+    height: 21px;
+    filter: Alpha(opacity=60);
+    background-color:white;
+}
+.multiselect-img,.singleSelect-img {
+	float: left;
+	width: 24px;
+	height: 24px;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	cursor: pointer;
+	background: url(images/selBtn.jpg) no-repeat;
+}
+
+.multiselectCheckDiv,.singleSelectCheckDiv {
+	display: block;
+	text-decoration: none;
+	width: 100%;
+	height: 27px;
+	margin: 0px;
+	padding: 0px; 
+}
+
+.multiseSelectCheckDiv_hover,.singleSelectCheckDiv_hover {
+	display: block;
+	border-radius: 2px 2px 2px 2px;
+	text-decoration: none;
+	margin: 0px;
+	padding:0px;
+	background: #FBA33C;
+	cursor:pointer;
+	color: #ffffff;
+}
+
+.multiseSelectCheckDiv_select,.singleSelectCheckDiv_select {
+	display: block;
+	border-radius: 2px 2px 2px 2px;
+	text-decoration: none;
+	margin: 0px;
+	padding:0px;
+	background: #FFEFC0;
+	cursor:pointer;
+	color: #000000;
+}

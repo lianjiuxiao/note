@@ -1,0 +1,272 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>拼音查询</title>
+
+<link href="selectbox.css" type="text/css" rel="stylesheet"/>
+
+<script src="jquery.min.js"></script>
+
+<script src="changtopy.js"></script>
+
+<script src="getpyszm.js"></script>
+
+<script src="jquery.singleselect.js"></script>
+
+<script src="jquery.multiseselect.js"></script>
+
+<script>
+
+    $(function(){
+
+    //单选下拉列表
+
+        $("#test").singleSelect({width:"200px",changeFunction:"selectchange(123)"});
+
+        $("#test2").multiseSelect({width:"200px"});
+
+        //$("#test3").singleSelect({width:"200px"});
+
+        $("#test4").multiseSelect({width:"200px"});
+
+    });
+
+    function changeSelect(){
+
+        $("#test").singleSelectLoaddingOn();
+
+        var a1 = new Array();
+
+        a1[0] = "1";
+
+        a1[1] = "2";
+
+        a1[2] = "3";        
+
+        var a2 = new Array();
+
+        a2[0] = "111";
+
+        a2[1] = "222";
+
+        a2[2] = "333";
+
+        $("#test").changeSingleSelectContent({
+
+            valItem:a1,
+
+            txtItem:a2,
+
+            selectItem:"1",
+
+            changeFunction:"selectchange"
+
+        });
+
+        $("#test").singleSelectLoaddingOff();
+
+    }
+
+    function createSelect(){
+
+        var a1 = new Array();               
+
+        var a2 = new Array();
+
+        for(var i=0;i<10;i++){
+
+            a1[i] = i;
+
+            a2[i] = "abc"+i;
+
+        }
+
+        $("#create").createSingleSelect({
+
+            id:"textcreate",
+
+            width:"200px",
+
+            valItem:a1,
+
+            txtItem:a2,
+
+            selectItem:'',
+
+            changeFunction:"selectchange()"
+
+        });
+
+    }
+
+    function selectchange(id){
+
+        alert(id);
+
+    }
+
+    function getSelectVal(){
+
+        alert($("#test").getsingleSelectValue());
+
+        $("#test").singleSelectInputSetText("小李");
+
+    }
+
+    function t(obj){
+
+        alert(obj.value);
+
+    }
+
+</script>
+
+
+<table>
+
+<tr>
+
+<td>
+
+    <select id="test">
+
+        <option value="1">张而非</option>
+
+        <option value="2">王分</option>
+
+        <option value="3">李冯家湾</option>
+
+        <option value="4">马废物</option>
+
+        <option value="5">赵废物</option>
+
+        <option value="6">马个</option>
+
+        <option value="7">赵访问</option>
+
+        <option value="8">许废物</option>
+
+        <option value="9">赵无法</option>
+
+        <option value="10">靖方</option>
+
+        <option value="11">赵易图</option>
+
+    </select>
+
+</td>
+
+<td>
+
+    <select id="test2">
+
+        <option value="1">小张</option>
+
+        <option value="2" selected="selected">小王</option>
+
+        <option value="3">小李</option>
+
+        <option value="4" selected="selected">小马</option>
+
+        <option value="5">小赵</option>
+
+    </select>
+
+</td>
+
+<td>
+
+    <select id="test3" onchange="selectchange()">
+
+        <option value="1">小张</option>
+
+        <option value="2">小王</option>
+
+        <option value="3">小李</option>
+
+        <option value="4">小马</option>
+
+        <option value="5">小赵</option>
+
+    </select>
+
+</td>
+
+<td>
+
+    <select id="test4">
+
+        <option value="1">小张</option>
+
+        <option value="2">小王</option>
+
+        <option value="3">小李</option>
+
+        <option value="4">小马</option>
+
+        <option value="5">小赵</option>
+
+    </select>
+
+</td>
+
+</tr>
+
+<tr>
+
+    <td>
+
+        <select>
+
+        <option value="1">小张</option>
+
+        <option value="2">小王</option>
+
+        <option value="3">小李</option>
+
+        <option value="4">小马</option>
+
+        <option value="5">小赵</option>
+
+        <option value="6">小马1</option>
+
+        <option value="7">小赵2</option>
+
+        <option value="8">小许3</option>
+
+        <option value="9">小赵4</option>
+
+        <option value="10">小靖5</option>
+
+        <option value="11">小赵6</option>
+
+    </select>
+
+    </td>
+
+    <td></td>
+
+    <td></td>
+
+    <td></td>
+
+</tr>
+
+</table><br />
+
+<input type="button" value="动态改变单选下拉列表的值" onclick="changeSelect()"/><br />
+
+<input type="button" value="动态创建单选下拉列表的值" onclick="createSelect()" /><div id="create"></div><br />
+
+<input type="button" value="选中的值" onclick="getSelectVal()"/><br />
+
+</body>
+
+</html>
+

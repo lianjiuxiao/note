@@ -1,0 +1,259 @@
+
+<!-- saved from url=(0037)http://sandbox.runjs.cn/show/hjor2zox -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script id="jquery_183" type="text/javascript" class="library" src="./hjor2zox_files/jquery-1.8.3.min.js">
+</script>
+	<script type="text/javascript" src="./hjor2zox_files/jquery.colorbox.js"></script>
+<link rel="stylesheet" type="text/css" href="./hjor2zox_files/colorbox.css">
+
+<style>
+	body{
+		font-size: 14px;
+		font-family: Microsoft YaHei, 微软雅黑, Verdana, sans-serif, 宋体;
+		line-height: 18px;
+	}
+	.section{
+		position:relative;
+		width:50%;
+		float:left;
+	}
+	.title{
+		font-size:16px;
+	}
+	.clear {
+		clear: both;
+		font-size: 1px;
+		line-height: 0;
+	}
+</style>
+
+<script type="text/javascript" src="./hjor2zox_files/jquery.colorbox(1).js">
+</script>
+</head><body><p>
+	jQuery 弹出窗口 
+	<a href="http://www.oschina.net/p/colorbox" target="_blank">
+		ColorBox
+	</a>
+</p>
+<h4>
+	效果：
+</h4>
+<h4>
+	ColorBox 演示
+</h4>
+<div class="section">
+	<div class="title">
+		弹性过渡
+	</div>
+	<p>
+		<a class="group1 cboxElement" href="http://sandbox.runjs.cn/uploads/rs/74/nlhieis0/girl.jpg" title="图片">
+			图片
+		</a>
+	</p>
+	<p>
+		<a class="group1 cboxElement" href="http://sandbox.runjs.cn/uploads/rs/74/nlhieis0/girl.jpg" title="图片">
+			图片
+		</a>
+	</p>
+	<p>
+		<a class="group1 cboxElement" href="http://sandbox.runjs.cn/uploads/rs/74/nlhieis0/girl.jpg" title="图片">
+			图片
+		</a>
+	</p>
+</div>
+<div class="section">
+	<div class="title">
+		渐入过渡
+	</div>
+	<p>
+		<a class="group2 cboxElement" href="http://sandbox.runjs.cn/uploads/rs/74/nlhieis0/girl.jpg" title="图片">
+			图片
+		</a>
+	</p>
+	<p>
+		<a class="group2 cboxElement" href="http://sandbox.runjs.cn/uploads/rs/74/nlhieis0/girl.jpg" title="图片">
+			图片
+		</a>
+	</p>
+	<p>
+		<a class="group2 cboxElement" href="http://static.oschina.net/uploads/space/2012/0607/142131_2PqS_28.jpg" title="图片">
+			图片
+		</a>
+	</p>
+</div>
+<div class="section">
+	<div class="title">
+		无过渡，固定宽高（75%屏幕高宽）
+	</div>
+	<p>
+		<a class="group3 cboxElement" href="http://sandbox.runjs.cn/uploads/rs/74/nlhieis0/girl.jpg" title="图片">
+			图片
+		</a>
+	</p>
+	<p>
+		<a class="group3 cboxElement" href="http://sandbox.runjs.cn/uploads/rs/74/nlhieis0/girl.jpg" title="图片">
+			图片
+		</a>
+	</p>
+	<p>
+		<a class="group3 cboxElement" href="http://sandbox.runjs.cn/uploads/rs/74/nlhieis0/girl.jpg" title="图片">
+			图片
+		</a>
+	</p>
+</div>
+<div class="section">
+	<div class="title">
+		滑动显示
+	</div>
+	<p>
+		<a class="group4 cboxElement" href="http://sandbox.runjs.cn/uploads/rs/74/nlhieis0/girl.jpg" title="图片">
+			图片
+		</a>
+	</p>
+	<p>
+		<a class="group4 cboxElement" href="http://static.oschina.net/uploads/space/2012/0709/105428_4aoW_28.jpg" title="图片">
+			图片
+		</a>
+	</p>
+	<p>
+		<a class="group4 cboxElement" href="http://static.oschina.net/uploads/space/2012/0607/142131_2PqS_28.jpg" title="图片">
+			图片
+		</a>
+	</p>
+</div>
+<div class="section">
+	<div class="title">
+		其他类型
+	</div>
+	<p>
+		<a class="ajax cboxElement" href="http://sandbox.runjs.cn/show/ajaxColorBox" title="Homer Defined">
+			外部HTML(Ajax)
+		</a>
+	</p>
+	<p>
+		<a class="youtube cboxElement" href="http://player.youku.com/player.php/sid/XMzI2NTUzMjcy/v.swf" title="Apologize现场版">
+			嵌入视频
+		</a>
+	</p>
+	<p>
+		<a class="iframe cboxElement" href="http://osctools.net/">
+			外部网页(Iframe)
+		</a>
+	</p>
+	<p>
+		<a class="inline cboxElement" href="http://sandbox.runjs.cn/show/hjor2zox#inline_content">
+			内嵌HTML
+		</a>
+	</p>
+</div>
+
+<div class="section">
+	<div class="title">
+		使用回调函数示例
+	</div>
+	<p>
+		<a class="callbacks cboxElement" href="http://sandbox.runjs.cn/uploads/rs/74/nlhieis0/girl.jpg" title="图片">
+			带有alert示例
+		</a>
+		. 回调函数使得用户能够扩展插件的一部分功能.
+	</p>
+	<div style="display:none">
+		<div id="inline_content" style="padding:10px; background:#fff;">
+    	<p>
+				<strong>
+					This content comes from a hidden element on this page.
+				</strong>
+				</p>
+				<p>
+					The inline option preserves bound JavaScript events and changes, and it puts the content back where it came from when it is closed.
+				</p>
+				<p>
+					<a id="click" href="http://sandbox.runjs.cn/show/hjor2zox#" style="padding:5px; background:#ccc;">
+						Click me, it will be preserved!
+					</a>
+				</p>
+				
+				<p>
+					<strong>
+						If you try to open a new ColorBox while it is already open, it will update itself with the new content.
+					</strong>
+				</p>
+				<p>
+					Updating Content Example:
+					<br>
+					<a class="ajax cboxElement" href="http://static.oschina.net/uploads/space/2012/0607/142131_2PqS_28.jpg">
+						Click here to load new content
+					</a>
+				</p>
+    	</div>
+	</div>
+</div>
+<div class="clear">
+</div>
+    	<style>body{
+	background-color:white;
+}
+</style>
+	    		<script>$(document).ready(function() {
+	//Examples of how to assign the ColorBox event to elements
+	$(".group1").colorbox({
+		rel: 'group1'
+	});
+	$(".group2").colorbox({
+		rel: 'group2',
+		transition: "fade"
+	});
+	$(".group3").colorbox({
+		rel: 'group3',
+		transition: "none",
+		width: "75%",
+		height: "75%"
+	});
+	$(".group4").colorbox({
+		rel: 'group4',
+		slideshow: true
+	});
+	$(".ajax").colorbox();
+	$(".youtube").colorbox({
+		iframe: true,
+		innerWidth: 425,
+		innerHeight: 344
+	});
+	$(".iframe").colorbox({
+		iframe: true,
+		width: "80%",
+		height: "80%"
+	});
+	$(".inline").colorbox({
+		inline: true,
+		width: "50%"
+	});
+	$(".callbacks").colorbox({
+		onOpen: function() {
+			alert('onOpen: colorbox is about to open');
+		},
+		onLoad: function() {
+			alert('onLoad: colorbox has started to load the targeted content');
+		},
+		onComplete: function() {
+			alert('onComplete: colorbox has displayed the loaded content');
+		},
+		onCleanup: function() {
+			alert('onCleanup: colorbox has begun the close process');
+		},
+		onClosed: function() {
+			alert('onClosed: colorbox has completely closed');
+		}
+	});
+
+	//Example of preserving a JavaScript event for inline calls.
+	$("#click").click(function() {
+		$('#click').css({
+			"background-color": "#f00",
+			"color": "#fff",
+			"cursor": "inherit"
+		}).text("Open this window again and this message will still be here.");
+		return false;
+	});
+});</script>
+	
+<!-- Generated by RunJS (Fri Feb 19 16:55:11 CST 2016) 2ms --><div id="cboxOverlay" style="opacity: 0; cursor: pointer; visibility: visible; display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none; visibility: visible; top: 149px; left: 487px; position: absolute; width: 467px; height: 414px; opacity: 0;"><div id="cboxWrapper" style="height: 414px; width: 467px;"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left; width: 425px;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left; height: 372px;"></div><div id="cboxContent" style="float: left; width: 425px; height: 372px;"><div id="cboxTitle" style="float: left; display: block;">Apologize现场版</div><div id="cboxCurrent" style="float: left; display: none;">image 1 of 3</div><button type="button" id="cboxPrevious" style="display: none;">previous</button><button type="button" id="cboxNext" style="display: none;">next</button><button type="button" id="cboxSlideshow" style="display: none;"></button><div id="cboxLoadingOverlay" style="float: left; display: none;"></div><div id="cboxLoadingGraphic" style="float: left; display: none;"></div><button type="button" id="cboxClose">close</button></div><div id="cboxMiddleRight" style="float: left; height: 372px;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left; width: 425px;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; max-width: none; display: none;"></div></div></body></html>

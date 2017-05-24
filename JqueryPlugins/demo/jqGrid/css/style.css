@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,pre,a,code,em,img,small,strong,sub,sup,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label{margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent}
+a{color:#007bc4/*#424242*/; text-decoration:none;}
+a:hover{text-decoration:underline}
+ol,ul{list-style:none}
+table{border-collapse:collapse;border-spacing:0}
+body{height:100%; font:12px/18px Tahoma, Helvetica, Arial, Verdana, "\5b8b\4f53", sans-serif; color:#51555C; background:#162934 url(../images/body_bg.gif) repeat-x}
+img{border:none}
+
+
+#header{width:910px; height:92px; margin:0 auto;}
+#logo{width:240px; height:90px; background:url(../images/logo_demo.gif) no-repeat}
+#logo h1{}
+#logo h1 a{display:block; width:240px; height:90px}
+
+#main{width:910px; min-height:600px; margin:30px auto 0 auto; background:#fff; -moz-border-radius:12px;-khtml-border-radius: 12px;-webkit-border-radius: 12px; border-radius:12px;}
+h2.top_title{margin:4px 20px; padding-top:15px; padding-left:20px; padding-bottom:10px; border-bottom:1px solid #d3d3d3; font-size:18px; color:#a84c10; background:url(../images/arrL.gif) no-repeat 2px 14px}
+
+#footer{height:60px;}
+#footer p{ padding:10px 2px; line-height:24px; text-align:center}
+#footer p a:hover{color:#51555C}
+
+.google_ad{width:728px; height:90px; margin:50px auto}
+
+.grid_table{width:780px; margin:20px auto}
+td a{color:#369}
+#opt{height:32px; }
+#query{float:right; width:450px; text-align:right}
+.input{width:120px; height:19px; line-height:19px; padding:1px; border:1px solid #ccc}
+.btn{width:58px; height:24px; border:1px solid #ccc; background:url(../btn_bg.gif) repeat-x; cursor:pointer;}
+
+.nodata{display:block; position:absolute; top:100px; left:35%; padding:6px 20px; border:1px solid #fc9; background:#ffc}
+
+.fanbox{width:540px; padding:0}
+.fanbox h3{height:32px; line-height:32px; padding-left:12px; background:#369; color:#fff}
+.post_table{width:98%; margin:10px auto}
+.post_table td{height:24px; line-height:24px; padding:2px; border:1px solid #ccc; border-collapse:collapse}
+.input2{width:220px; height:20px; line-height:20px; padding:1px; border:1px solid #999}
+
+.jquery-message{position:absolute;  top:15%; left:45%; background:#217eb9; border:1px solid #ff9; padding:3px 12px 3px 12px; z-index:9001; color:#fff;}
+
+

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://www.jq22.com/demo/colorpicker-150209223358/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        
+
+        <title>ColorPicker颜色选择器演示程序</title>
+
+        <style>
+
+            body,blockquote {margin:0;padding:0;font-size:12px;font-family:"微软雅黑",Verdana,Arial}
+
+            #container {width:900px;margin:0 auto;}
+
+            #image {margin-bottom:10px;}
+
+            blockquote {margin:10px 0;padding:0;}
+
+            .act1 {width:50px;}
+
+          pre {margin:0;padding:0;border:1px solid #ccc;margin-top:10px;padding-left:5px;}
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="container">
+
+        <script type="text/javascript" src="jquery.js"></script> 
+
+<script type="text/javascript" src="jquery.colorpicker.js"></script> 
+
+    <h2>ColorPicker颜色选择器演示 </h2>
+
+    <blockquote>
+
+        <font color="blue">默认：</font><br>
+
+        请输入颜色值：<input type="text" id="cp1">
+
+        <pre>
+$("#cp1").colorpicker({
+
+    fillcolor:true
+
+});</pre>
+
+    </blockquote>
+
+    <blockquote>
+
+        <font color="blue">文字着色：</font><br>
+
+        请输入颜色值：<input type="text" id="cp2">
+
+        <pre>
+$("#cp2").colorpicker({
+
+    fillcolor:true,
+
+    success:function(o,color){
+
+        $(o).css("color",color);
+
+    }
+
+});</pre>
+
+    </blockquote>
+
+    <blockquote>
+
+        <font color="blue">外部点击触发：</font><br>
+
+        请输入颜色值：<input type="text" id="cp3text" value="这里是测试的文字"><img src="colorpicker.png" id="cp3" style="cursor:pointer">
+
+        <pre>
+$("#cp3").colorpicker({
+
+    fillcolor:true,
+
+    success:function(o,color){
+
+        $("#cp3text").css("color",color);
+
+    }
+
+});</pre>
+
+    </blockquote>
+
+    <blockquote>
+
+        <font color="blue">外部鼠标Mouseover触发：</font><br>
+
+        请输入颜色值：<input type="text" id="cp4text" value="这里是测试的文字"><img src="colorpicker.png" id="cp4" style="cursor:pointer">
+
+        <pre>
+$("#cp4").colorpicker({
+
+    fillcolor:true,
+
+    event:'mouseover',
+
+    success:function(o,color){
+
+        $("#cp4text").css("color",color);
+
+    }
+
+});</pre>
+
+    </blockquote>
+
+    <blockquote>
+
+        <font color="blue">填充其它对象：</font><br>
+
+        请输入颜色值：<input type="text" id="cp5text" value=""><img src="colorpicker.png" id="cp5" style="cursor:pointer">
+
+        <pre>
+$("#cp5").colorpicker({
+
+    fillcolor:true,
+
+    event:'mouseover',
+
+    target:$("#cp5text")
+
+});</pre>
+
+    </blockquote>
+
+</div>
+
+<script type="text/javascript">
+
+    $(function(){
+
+        $("#cp1").colorpicker({
+
+            fillcolor:true
+
+        });
+
+        $("#cp2").colorpicker({
+
+            fillcolor:true,
+
+            success:function(o,color){
+
+                $(o).css("color",color);
+
+            }
+
+        });
+
+        $("#cp3").colorpicker({
+
+            fillcolor:true,
+
+            success:function(o,color){
+
+                $("#cp3text").css("color",color);
+
+            }
+
+        });
+
+        $("#cp4").colorpicker({
+
+            fillcolor:true,
+
+            event:'mouseover',
+
+            success:function(o,color){
+
+                $("#cp4text").css("color",color);
+
+            }
+
+        });
+
+        $("#cp5").colorpicker({
+
+            fillcolor:true,
+
+            event:'mouseover',
+
+            target:$("#cp5text")
+
+        });
+
+    });
+
+</script>
+
+            
+
+        
+
+    
+
+<div id="colorpanel" style="position: absolute; display: none;"><table width="253" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #000;"><tbody><tr height="30"><td colspan="21" bgcolor="#cccccc"><table cellpadding="0" cellspacing="1" border="0" style="border-collapse: collapse"><tbody><tr><td width="3"></td><td><input type="text" id="DisColor" size="6" disabled="" style="border:solid 1px #000000;background-color:#ffff00"></td><td width="3"></td><td><input type="text" id="HexColor" size="7" style="border:inset 1px;font-family:Arial;" value="#000000"><a href="javascript:void(0);" id="_cclose" style="font-size: 12px; padding-left: 20px;">关闭</a> | <a href="javascript:void(0);" id="_creset">清除</a></td></tr></tbody></table></td></tr></tbody></table><table id="CT" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse" bordercolor="000000"><tbody><tr height="12"><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#003300" style="background-color:#003300"></td><td width="11" rel="#006600" style="background-color:#006600"></td><td width="11" rel="#009900" style="background-color:#009900"></td><td width="11" rel="#00CC00" style="background-color:#00CC00"></td><td width="11" rel="#00FF00" style="background-color:#00FF00"></td><td width="11" rel="#330000" style="background-color:#330000"></td><td width="11" rel="#333300" style="background-color:#333300"></td><td width="11" rel="#336600" style="background-color:#336600"></td><td width="11" rel="#339900" style="background-color:#339900"></td><td width="11" rel="#33CC00" style="background-color:#33CC00"></td><td width="11" rel="#33FF00" style="background-color:#33FF00"></td><td width="11" rel="#660000" style="background-color:#660000"></td><td width="11" rel="#663300" style="background-color:#663300"></td><td width="11" rel="#666600" style="background-color:#666600"></td><td width="11" rel="#669900" style="background-color:#669900"></td><td width="11" rel="#66CC00" style="background-color:#66CC00"></td><td width="11" rel="#66FF00" style="background-color:#66FF00"></td></tr><tr height="12"><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#333333" style="background-color:#333333"></td><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#000033" style="background-color:#000033"></td><td width="11" rel="#003333" style="background-color:#003333"></td><td width="11" rel="#006633" style="background-color:#006633"></td><td width="11" rel="#009933" style="background-color:#009933"></td><td width="11" rel="#00CC33" style="background-color:#00CC33"></td><td width="11" rel="#00FF33" style="background-color:#00FF33"></td><td width="11" rel="#330033" style="background-color:#330033"></td><td width="11" rel="#333333" style="background-color:#333333"></td><td width="11" rel="#336633" style="background-color:#336633"></td><td width="11" rel="#339933" style="background-color:#339933"></td><td width="11" rel="#33CC33" style="background-color:#33CC33"></td><td width="11" rel="#33FF33" style="background-color:#33FF33"></td><td width="11" rel="#660033" style="background-color:#660033"></td><td width="11" rel="#663333" style="background-color:#663333"></td><td width="11" rel="#666633" style="background-color:#666633"></td><td width="11" rel="#669933" style="background-color:#669933"></td><td width="11" rel="#66CC33" style="background-color:#66CC33"></td><td width="11" rel="#66FF33" style="background-color:#66FF33"></td></tr><tr height="12"><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#666666" style="background-color:#666666"></td><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#000066" style="background-color:#000066"></td><td width="11" rel="#003366" style="background-color:#003366"></td><td width="11" rel="#006666" style="background-color:#006666"></td><td width="11" rel="#009966" style="background-color:#009966"></td><td width="11" rel="#00CC66" style="background-color:#00CC66"></td><td width="11" rel="#00FF66" style="background-color:#00FF66"></td><td width="11" rel="#330066" style="background-color:#330066"></td><td width="11" rel="#333366" style="background-color:#333366"></td><td width="11" rel="#336666" style="background-color:#336666"></td><td width="11" rel="#339966" style="background-color:#339966"></td><td width="11" rel="#33CC66" style="background-color:#33CC66"></td><td width="11" rel="#33FF66" style="background-color:#33FF66"></td><td width="11" rel="#660066" style="background-color:#660066"></td><td width="11" rel="#663366" style="background-color:#663366"></td><td width="11" rel="#666666" style="background-color:#666666"></td><td width="11" rel="#669966" style="background-color:#669966"></td><td width="11" rel="#66CC66" style="background-color:#66CC66"></td><td width="11" rel="#66FF66" style="background-color:#66FF66"></td></tr><tr height="12"><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#999999" style="background-color:#999999"></td><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#000099" style="background-color:#000099"></td><td width="11" rel="#003399" style="background-color:#003399"></td><td width="11" rel="#006699" style="background-color:#006699"></td><td width="11" rel="#009999" style="background-color:#009999"></td><td width="11" rel="#00CC99" style="background-color:#00CC99"></td><td width="11" rel="#00FF99" style="background-color:#00FF99"></td><td width="11" rel="#330099" style="background-color:#330099"></td><td width="11" rel="#333399" style="background-color:#333399"></td><td width="11" rel="#336699" style="background-color:#336699"></td><td width="11" rel="#339999" style="background-color:#339999"></td><td width="11" rel="#33CC99" style="background-color:#33CC99"></td><td width="11" rel="#33FF99" style="background-color:#33FF99"></td><td width="11" rel="#660099" style="background-color:#660099"></td><td width="11" rel="#663399" style="background-color:#663399"></td><td width="11" rel="#666699" style="background-color:#666699"></td><td width="11" rel="#669999" style="background-color:#669999"></td><td width="11" rel="#66CC99" style="background-color:#66CC99"></td><td width="11" rel="#66FF99" style="background-color:#66FF99"></td></tr><tr height="12"><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#CCCCCC" style="background-color:#CCCCCC"></td><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#0000CC" style="background-color:#0000CC"></td><td width="11" rel="#0033CC" style="background-color:#0033CC"></td><td width="11" rel="#0066CC" style="background-color:#0066CC"></td><td width="11" rel="#0099CC" style="background-color:#0099CC"></td><td width="11" rel="#00CCCC" style="background-color:#00CCCC"></td><td width="11" rel="#00FFCC" style="background-color:#00FFCC"></td><td width="11" rel="#3300CC" style="background-color:#3300CC"></td><td width="11" rel="#3333CC" style="background-color:#3333CC"></td><td width="11" rel="#3366CC" style="background-color:#3366CC"></td><td width="11" rel="#3399CC" style="background-color:#3399CC"></td><td width="11" rel="#33CCCC" style="background-color:#33CCCC"></td><td width="11" rel="#33FFCC" style="background-color:#33FFCC"></td><td width="11" rel="#6600CC" style="background-color:#6600CC"></td><td width="11" rel="#6633CC" style="background-color:#6633CC"></td><td width="11" rel="#6666CC" style="background-color:#6666CC"></td><td width="11" rel="#6699CC" style="background-color:#6699CC"></td><td width="11" rel="#66CCCC" style="background-color:#66CCCC"></td><td width="11" rel="#66FFCC" style="background-color:#66FFCC"></td></tr><tr height="12"><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#FFFFFF" style="background-color:#FFFFFF"></td><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#0000FF" style="background-color:#0000FF"></td><td width="11" rel="#0033FF" style="background-color:#0033FF"></td><td width="11" rel="#0066FF" style="background-color:#0066FF"></td><td width="11" rel="#0099FF" style="background-color:#0099FF"></td><td width="11" rel="#00CCFF" style="background-color:#00CCFF"></td><td width="11" rel="#00FFFF" style="background-color:#00FFFF"></td><td width="11" rel="#3300FF" style="background-color:#3300FF"></td><td width="11" rel="#3333FF" style="background-color:#3333FF"></td><td width="11" rel="#3366FF" style="background-color:#3366FF"></td><td width="11" rel="#3399FF" style="background-color:#3399FF"></td><td width="11" rel="#33CCFF" style="background-color:#33CCFF"></td><td width="11" rel="#33FFFF" style="background-color:#33FFFF"></td><td width="11" rel="#6600FF" style="background-color:#6600FF"></td><td width="11" rel="#6633FF" style="background-color:#6633FF"></td><td width="11" rel="#6666FF" style="background-color:#6666FF"></td><td width="11" rel="#6699FF" style="background-color:#6699FF"></td><td width="11" rel="#66CCFF" style="background-color:#66CCFF"></td><td width="11" rel="#66FFFF" style="background-color:#66FFFF"></td></tr><tr height="12"><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#FF0000" style="background-color:#FF0000"></td><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#990000" style="background-color:#990000"></td><td width="11" rel="#993300" style="background-color:#993300"></td><td width="11" rel="#996600" style="background-color:#996600"></td><td width="11" rel="#999900" style="background-color:#999900"></td><td width="11" rel="#99CC00" style="background-color:#99CC00"></td><td width="11" rel="#99FF00" style="background-color:#99FF00"></td><td width="11" rel="#CC0000" style="background-color:#CC0000"></td><td width="11" rel="#CC3300" style="background-color:#CC3300"></td><td width="11" rel="#CC6600" style="background-color:#CC6600"></td><td width="11" rel="#CC9900" style="background-color:#CC9900"></td><td width="11" rel="#CCCC00" style="background-color:#CCCC00"></td><td width="11" rel="#CCFF00" style="background-color:#CCFF00"></td><td width="11" rel="#FF0000" style="background-color:#FF0000"></td><td width="11" rel="#FF3300" style="background-color:#FF3300"></td><td width="11" rel="#FF6600" style="background-color:#FF6600"></td><td width="11" rel="#FF9900" style="background-color:#FF9900"></td><td width="11" rel="#FFCC00" style="background-color:#FFCC00"></td><td width="11" rel="#FFFF00" style="background-color:#FFFF00"></td></tr><tr height="12"><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#00FF00" style="background-color:#00FF00"></td><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#990033" style="background-color:#990033"></td><td width="11" rel="#993333" style="background-color:#993333"></td><td width="11" rel="#996633" style="background-color:#996633"></td><td width="11" rel="#999933" style="background-color:#999933"></td><td width="11" rel="#99CC33" style="background-color:#99CC33"></td><td width="11" rel="#99FF33" style="background-color:#99FF33"></td><td width="11" rel="#CC0033" style="background-color:#CC0033"></td><td width="11" rel="#CC3333" style="background-color:#CC3333"></td><td width="11" rel="#CC6633" style="background-color:#CC6633"></td><td width="11" rel="#CC9933" style="background-color:#CC9933"></td><td width="11" rel="#CCCC33" style="background-color:#CCCC33"></td><td width="11" rel="#CCFF33" style="background-color:#CCFF33"></td><td width="11" rel="#FF0033" style="background-color:#FF0033"></td><td width="11" rel="#FF3333" style="background-color:#FF3333"></td><td width="11" rel="#FF6633" style="background-color:#FF6633"></td><td width="11" rel="#FF9933" style="background-color:#FF9933"></td><td width="11" rel="#FFCC33" style="background-color:#FFCC33"></td><td width="11" rel="#FFFF33" style="background-color:#FFFF33"></td></tr><tr height="12"><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#0000FF" style="background-color:#0000FF"></td><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#990066" style="background-color:#990066"></td><td width="11" rel="#993366" style="background-color:#993366"></td><td width="11" rel="#996666" style="background-color:#996666"></td><td width="11" rel="#999966" style="background-color:#999966"></td><td width="11" rel="#99CC66" style="background-color:#99CC66"></td><td width="11" rel="#99FF66" style="background-color:#99FF66"></td><td width="11" rel="#CC0066" style="background-color:#CC0066"></td><td width="11" rel="#CC3366" style="background-color:#CC3366"></td><td width="11" rel="#CC6666" style="background-color:#CC6666"></td><td width="11" rel="#CC9966" style="background-color:#CC9966"></td><td width="11" rel="#CCCC66" style="background-color:#CCCC66"></td><td width="11" rel="#CCFF66" style="background-color:#CCFF66"></td><td width="11" rel="#FF0066" style="background-color:#FF0066"></td><td width="11" rel="#FF3366" style="background-color:#FF3366"></td><td width="11" rel="#FF6666" style="background-color:#FF6666"></td><td width="11" rel="#FF9966" style="background-color:#FF9966"></td><td width="11" rel="#FFCC66" style="background-color:#FFCC66"></td><td width="11" rel="#FFFF66" style="background-color:#FFFF66"></td></tr><tr height="12"><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#FFFF00" style="background-color:#FFFF00"></td><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#990099" style="background-color:#990099"></td><td width="11" rel="#993399" style="background-color:#993399"></td><td width="11" rel="#996699" style="background-color:#996699"></td><td width="11" rel="#999999" style="background-color:#999999"></td><td width="11" rel="#99CC99" style="background-color:#99CC99"></td><td width="11" rel="#99FF99" style="background-color:#99FF99"></td><td width="11" rel="#CC0099" style="background-color:#CC0099"></td><td width="11" rel="#CC3399" style="background-color:#CC3399"></td><td width="11" rel="#CC6699" style="background-color:#CC6699"></td><td width="11" rel="#CC9999" style="background-color:#CC9999"></td><td width="11" rel="#CCCC99" style="background-color:#CCCC99"></td><td width="11" rel="#CCFF99" style="background-color:#CCFF99"></td><td width="11" rel="#FF0099" style="background-color:#FF0099"></td><td width="11" rel="#FF3399" style="background-color:#FF3399"></td><td width="11" rel="#FF6699" style="background-color:#FF6699"></td><td width="11" rel="#FF9999" style="background-color:#FF9999"></td><td width="11" rel="#FFCC99" style="background-color:#FFCC99"></td><td width="11" rel="#FFFF99" style="background-color:#FFFF99"></td></tr><tr height="12"><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#00FFFF" style="background-color:#00FFFF"></td><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#9900CC" style="background-color:#9900CC"></td><td width="11" rel="#9933CC" style="background-color:#9933CC"></td><td width="11" rel="#9966CC" style="background-color:#9966CC"></td><td width="11" rel="#9999CC" style="background-color:#9999CC"></td><td width="11" rel="#99CCCC" style="background-color:#99CCCC"></td><td width="11" rel="#99FFCC" style="background-color:#99FFCC"></td><td width="11" rel="#CC00CC" style="background-color:#CC00CC"></td><td width="11" rel="#CC33CC" style="background-color:#CC33CC"></td><td width="11" rel="#CC66CC" style="background-color:#CC66CC"></td><td width="11" rel="#CC99CC" style="background-color:#CC99CC"></td><td width="11" rel="#CCCCCC" style="background-color:#CCCCCC"></td><td width="11" rel="#CCFFCC" style="background-color:#CCFFCC"></td><td width="11" rel="#FF00CC" style="background-color:#FF00CC"></td><td width="11" rel="#FF33CC" style="background-color:#FF33CC"></td><td width="11" rel="#FF66CC" style="background-color:#FF66CC"></td><td width="11" rel="#FF99CC" style="background-color:#FF99CC"></td><td width="11" rel="#FFCCCC" style="background-color:#FFCCCC"></td><td width="11" rel="#FFFFCC" style="background-color:#FFFFCC"></td></tr><tr height="12"><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#FF00FF" style="background-color:#FF00FF"></td><td width="11" rel="#000000" style="background-color:#000000"></td><td width="11" rel="#9900FF" style="background-color:#9900FF"></td><td width="11" rel="#9933FF" style="background-color:#9933FF"></td><td width="11" rel="#9966FF" style="background-color:#9966FF"></td><td width="11" rel="#9999FF" style="background-color:#9999FF"></td><td width="11" rel="#99CCFF" style="background-color:#99CCFF"></td><td width="11" rel="#99FFFF" style="background-color:#99FFFF"></td><td width="11" rel="#CC00FF" style="background-color:#CC00FF"></td><td width="11" rel="#CC33FF" style="background-color:#CC33FF"></td><td width="11" rel="#CC66FF" style="background-color:#CC66FF"></td><td width="11" rel="#CC99FF" style="background-color:#CC99FF"></td><td width="11" rel="#CCCCFF" style="background-color:#CCCCFF"></td><td width="11" rel="#CCFFFF" style="background-color:#CCFFFF"></td><td width="11" rel="#FF00FF" style="background-color:#FF00FF"></td><td width="11" rel="#FF33FF" style="background-color:#FF33FF"></td><td width="11" rel="#FF66FF" style="background-color:#FF66FF"></td><td width="11" rel="#FF99FF" style="background-color:#FF99FF"></td><td width="11" rel="#FFCCFF" style="background-color:#FFCCFF"></td><td width="11" rel="#FFFFFF" style="background-color:#FFFFFF"></td></tr></tbody></table></div><div id="colorpanel" style="position: absolute; display: none;"></div><div id="colorpanel" style="position: absolute; display: none;"></div><div id="colorpanel" style="position: absolute; display: none;"></div><div id="colorpanel" style="position: absolute; display: none;"></div></body></html>
