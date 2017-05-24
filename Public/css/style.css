@@ -67,12 +67,15 @@ pre{
 .notice{
     color: red;
 }
-
-
 #demo{
     width: 0;
     height: 0;
     border-width: 20px;
     border-style: solid;
     border-color: transparent transparent red transparent;
+}
+.index>ul>li{
+    padding-left: 10px;
+    margin-bottom: 10px;
+    list-style-type: decimal;
 }
