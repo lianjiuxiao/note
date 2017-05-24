@@ -74,7 +74,7 @@ pre{
     border-style: solid;
     border-color: transparent transparent red transparent;
 }
-.index>ul>li{
+.list>ul>li{
     padding-left: 10px;
     margin-bottom: 10px;
     list-style-type: decimal;
