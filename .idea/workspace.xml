@@ -128,7 +128,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="jqueryEffect" />
+              <option name="myItemId" value="JqueryEffect" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -258,7 +258,7 @@
       <workItem from="1485225956332" duration="3049000" />
       <workItem from="1487231966084" duration="15000" />
       <workItem from="1495551639932" duration="4137000" />
-      <workItem from="1495603979297" duration="2054000" />
+      <workItem from="1495603979297" duration="2651000" />
     </task>
     <task id="LOCAL-00001" summary="index">
       <created>1485223658429</created>
@@ -369,10 +369,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8032000" />
+    <option name="totallyTimeSpent" value="8629000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14508928" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -505,7 +505,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jqueryEffect/index.html">
+    <entry file="file://$PROJECT_DIR$/JqueryEffect/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
