@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jquery知识点</title>
+    <link rel="stylesheet" type="text/css" href="../Public/css/fonts.css.css">
+    <link rel="stylesheet" type="text/css" href="../Public/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../Public/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../Public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../Public/css/important.css">
+</head>
+
+<body>
+<div class="main">
+    <h1 class="title center">js知识点</h1>
+    <div class="cl cl1">
+        <h3 class="cl-title">json数据处理 json字符串和js对象之间的转换</h3>
+        <div class="ccl ccl1">
+            <p class="ccl-title">json 字符串转换为json对象</p>
+            <div class="ccl-cont">
+                var obj=eval('('+str+')');
+                <br/> var obj=str.parseJSON();
+                <br/> var obj=JSON.parse(str);
+                <br/>
+            </div>
+        </div>
+        <div class="ccl ccl2">
+            <p class="ccl-title">json json对象转换为字符串</p>
+            <div class="ccl-cont">
+                var str=obj.toJSONString();
+                <br/> var str=JSON.stringify(obj);
+                <br/>
+            </div>
+        </div>
+    </div>
+
+    <div class="cl cl2">
+        <h3 class="cl-title">跨域请求的解决方案 8中</h3>
+        <div class="cont">
+            <a class="btn" target="_blank" href="demo/kuayu/前端解决跨域问题的8种方案.html">html说明</a>
+        </div>
+    </div>
+
+
+    <div class="cl cl3">
+        <h3 class="cl-title">jsonp请求</h3>
+        <img src="images/PHP AJAX JSONP实现跨域请求.png" alt="">
+    </div>
+
+
+
+</div>
+</body>
+
+</html>
