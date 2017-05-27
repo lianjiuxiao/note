@@ -15,7 +15,6 @@ module.exports = function (app) {
             'localhost:3000': 'http://api.tp.com'
         }
     };
-
     var optionsYw = {
         target: 'http://api.tp.com', // target host
         changeOrigin: true,               // needed for virtual hosted sites
@@ -29,7 +28,6 @@ module.exports = function (app) {
             'localhost:3000': 'http://api.tp.com'
         }
     };
-
     var exampleProxyApi = proxy(optionsApi);
     var exampleProxyYw = proxy(optionsYw);
     app.use('/api', exampleProxyApi);

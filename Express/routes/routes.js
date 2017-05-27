@@ -1,3 +1,4 @@
+var upload = require('./upload.js');
 module.exports = function (app) {
     app.all('/', function (req, res) {
         // res.send('Hello World!');
@@ -7,4 +8,5 @@ module.exports = function (app) {
         // res.send('Hello World!');
         res.render("user/index.html")
     });
+    app.post('/upload', upload.upload);
 }

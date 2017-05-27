@@ -28,6 +28,35 @@
 	});
 
 	$.ajax({
+		url: "/toget.php",
+		type: "get",
+		async: true,
+		data:params,
+		dataType: "json",
+		success: function (data) {
+			console.log("11111111111");
+		},
+		error:function (data) {
+			console.log("2222222222");
+		}
+	});
+
+	$.ajax({
+		url: "/topost.php",
+		type: "post",
+		async: true,
+		data:params,
+		dataType: "json",
+		success: function (data) {
+			console.log("11111111111");
+		},
+		error:function (data) {
+			console.log("2222222222");
+		}
+	});
+
+
+	$.ajax({
 		url: "/api/getCartsGoods.php",
 		type: "post",
 		async: true,
