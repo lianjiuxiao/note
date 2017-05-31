@@ -3,7 +3,7 @@ const ejs  = require('ejs');
 const routers= require('./routes/routes.js');
 const proxy = require('./routes/proxy.js');
 const requests = require('./routes/request.js');
-
+const ace = require('./routes/ace.js');
 
 
 const app = express();
@@ -24,9 +24,8 @@ routers(app);
 /*设置ajax分发*/
 requests(app);
 
-
-
-
+/*ace配置信息*/
+ace(app);
 
 
 // app.use(bodyParser({ uploadDir: "./public/upload" }));
