@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/Express" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../oschina/note" vcs="Git" />
   </component>
 </project>
