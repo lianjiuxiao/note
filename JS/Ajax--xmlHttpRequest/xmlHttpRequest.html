@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>xmlHttpRequest总结</title>
+</head>
+<body>
+	<input type="text" style="width: 500px;" id="goodaddr" value="0">
+	<br>
+	<button onClick="CrossApi(goodaddr)">跨域请求地址</button>
+	<div id="divresultshow"></div>
+</body>
+</html>
+<script type="text/javascript">
+/* 
+xmlHttpRequest对象:
+	XMLHttpRequest对象提供了对HTTP协议的完全的访问,包括做出POST和HEAD请求以及普通的GET请求的能力.
+	XMLHttpRequest可以同步或异步地返回Web服务器的响应,并且能够以文本或者一个DOM文档的形式返回内容.
+
+不管发送怎样的请求XMLHttpRequest都应该按如下步骤进行:
+     	1.初始化XMLHttpRequest对象;
+      	2.打开与服务器连接.打开连接时,指定发送请求的方法;采用GET或POST,指定是否采用异步方式;
+     	3.设置监听XMLHttpRequest状态改变发送请求的事件处理函数;
+     	4.发送请求.如果采用POST方法发送请求,可发送带参数的请求.
+
+说明：
+	xmlHttpRequest属性方法:
+	方法：
+		open() 初始化http请求参数,包括URL和http方法,但是不发送请求;
+		abort() 取消当前响应,关闭连接并断开所有网络未结束的活动;
+		getAllResponseHeaders() 把http响应头部作为未解析字符串返回;
+		getResponseHeaders() 返回指定的http响应头的值;
+		send() 发送http请求,使用传递给open()方法的参数,以及传个该方法的可选请求体；
+		setResponseHeader() 向一个打开但没有发送的请求设置或添加一个Http请求。
+ 	属性：
+ 		readyState 说明http请求的状态;(有5个状态分别是)
+		 	0:表示没有初始化；
+		 	1:表示读取中
+		 	2:表示已读取
+		 	3:交互中(接受中)
+		 	4:完成
+	
+		responseText 说明为服务器接收到得响应体，如果没有接收到数据就返回空字符串;
+		responseXML 说明对请求的回应,解析为XML并用document对象返回;
+		status 说明http请求的状态;
+
+		statusText 说明http请求状态不是以数字形式而是用名称;
+		onreadystatechange 是readySate状态改变时调用事件的函数.
+		responseBody 返回某一格式的服务器响应数据
+ */
+
+var	goodaddr = "https://192.168.74.159:8080/test.php";
+document.getElementById("goodaddr").setAttribute('value',goodaddr);
+//创建XMLHttpRequest对象
+function getXmlHttp() {
+    var xHttp;
+    if(window.ActiveXObject) {
+        try{
+            var xHttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }catch(e) {xHttp = false;}
+    }else {
+        try{
+            var xHttp = new XMLHttpRequest();
+        }catch(e) {xHttp = false;}
+    }
+    return xHttp;
+}
+// xmlHttpRequest发送请求
+var xhr = getXmlHttp();
+function CrossApi(cross) {
+	var url = cross;
+	//构造表单数据
+	var formData = new FormData();
+    formData.append('name','My name is Mr.xu');
+    formData.append('gender','man');
+    
+    xhr.open('POST', url, true); 
+    xhr.onreadystatechange = handler; 
+    xhr.send(formData); 
+}
+//返回数据写入div中
+function handler(evtXHR) {  
+    if (xhr.readyState == 4) {  
+        if (xhr.status == 200) {  
+            var response = xhr.responseText;  
+            document.getElementById("divresultshow").innerHTML = "结果：" + response;  
+        } else {  
+            document.getElementById("divresultshow").innerHTML = "不允许跨域请求。";  
+        }  
+    }  
+    else
+    {  
+      document.getElementById("divresultshow").innerHTML += "<br/>执行状态 readyState：" + xhr.readyState;  
+    }  
+}
+</script>
